@@ -2,3 +2,4 @@
 // Commit 2 - Agrega propiedades al modelo
 // Commit 3 - Implementa servicio de usuarios
 // Commit 4 - Agrega validaciones al formulario
+// Commit 5 - Refactoriza la lógica del componente
