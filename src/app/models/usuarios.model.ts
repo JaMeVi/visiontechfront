@@ -3,3 +3,4 @@
 // Commit 3 - Implementa servicio de usuarios
 // Commit 4 - Agrega validaciones al formulario
 // Commit 5 - Refactoriza la lógica del componente
+// Commit 6 - Mejora uso del observable
