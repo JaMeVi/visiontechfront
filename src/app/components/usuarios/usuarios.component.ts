@@ -5,3 +5,4 @@
 // Commit 5 - Refactoriza la lógica del componente
 // Commit 6 - Mejora uso del observable
 // Commit 7 - Agrega interceptor para errores
+// Commit 8 - Reestructura modelo con nuevos campos
