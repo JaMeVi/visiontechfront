@@ -7,3 +7,4 @@
 // Commit 7 - Agrega interceptor para errores
 // Commit 8 - Reestructura modelo con nuevos campos
 // Commit 9 - Mejora estilos y layout del HTML
+// Commit 10 - Optimiza el uso de servicios HTTP
