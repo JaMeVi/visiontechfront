@@ -1,43 +1,153 @@
+import { InsertarEditarUsuariosComponent } from './components/usuarios/insertar-editar-usuarios/insertar-editar-usuarios.component';
+import { InsertarEditarIncidentesComponent } from './components/incidentes/insertar-editar-incidentes/insertar-editar-incidentes.component';
+import { InsertarEditarCatmosfericasComponent } from './components/catmosfericas/insertar-editar-catmosfericas/insertar-editar-catmosfericas.component';
 import { Routes } from '@angular/router';
 import { RolesComponent } from './components/roles/roles.component';
-import { AgregarActualizarRolesComponent } from './components/roles/agregar-actualizar-roles/agregar-actualizar-roles.component';
-import { UsersComponent } from './components/users/users.component';
-import { ListarUsuariosComponent } from './components/users/listar-usuarios/listar-usuarios.component';
-import { AgregarActualizarUsuariosComponent } from './components/users/agregar-actualizar-usuarios/agregar-actualizar-usuarios.component';
+
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RutasComponent } from './components/rutas/rutas.component';
-import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
-import { VerDetalleRutaComponent } from './components/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
-import { RecomendacionesComponent } from './components/recomendaciones/recomendaciones.component';
-import { AgregarActualizarRecomendacionesComponent } from './components/recomendaciones/agregar-actualizar-recomendaciones/agregar-actualizar-recomendaciones.component';
-import { IncidentesComponent } from './components/incidentes/incidentes.component';
-import { AgregarActualizarIncidentesComponent } from './components/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
-import { TemaforoComponent } from './components/temaforo/temaforo.component';
-import { AgregarActualizarTemaforoComponent } from './components/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
-import { RespuestasComponent } from './components/respuestas/respuestas.component';
-import { AgregarActualizarRespuestasComponent } from './components/respuestas/agregar-actualizar-respuestas/agregar-actualizar-respuestas.component';
 import { MetricasComponent } from './components/metricas/metricas.component';
-import { AgregarActualizarMetricasComponent } from './components/metricas/agregar-actualizar-metricas/agregar-actualizar-metricas.component';
-import { CondicionesatmosfericasComponent } from './components/condicionesatmosfericas/condicionesatmosfericas.component';
-import { AgregarActualizarCondicionesatmosfericasComponent } from './components/condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas.component';
-import { ContactoemergenciaComponent } from './components/contactoemergencia/contactoemergencia.component';
-import { AgregarActualizarContactoemergenciaComponent } from './components/contactoemergencia/agregar-actualizar-contactoemergencia/agregar-actualizar-contactoemergencia.component';
+import { CatmosfericasComponent } from './components/catmosfericas/catmosfericas.component';
+import { IncidentesComponent } from './components/incidentes/incidentes.component';
+import { RecomendacionesComponent } from './components/recomendaciones/recomendaciones.component';
+import { ContactoEmergenciaComponent } from './components/contacto-emergencia/contacto-emergencia.component';
+import { InsertarEditarMetricasComponent } from './components/metricas/insertar-editar-metricas/insertar-editar-metricas.component';
+import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
 
+import { InsertarEditarRolesComponent } from './components/roles/insertar-editar-roles/insertar-editar-roles.component';
+import { seguridadGuard } from './guard/seguridad.guard';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { InsertarEditarRecomendacionesComponent } from './components/recomendaciones/insertar-editar-recomendaciones/insertar-editar-recomendaciones.component';
+import { MapaDireccionComponent } from './components/mapa-direccion/mapa-direccion.component';
+import { RespuestasComponent } from './components/respuestas/respuestas.component';
+import { InsertarEditarRespuestasComponent } from './components/respuestas/insertar-editar-respuestas/insertar-editar-respuestas.component';
+import { TemasforoComponent } from './components/temasforo/temasforo.component';
+import { InsertarEditarTemasforoComponent } from './components/temasforo/insertar-editar-temasforo/insertar-editar-temasforo.component';
+import { adminRoleGuard } from './guards/admin-role.guard';
 
-export const routes: Routes = [// Ruta por defecto
-    {
-        path:'', redirectTo:'usuarios', pathMatch:'full'
-    },
-    {
-        path:'usuarios', component:UsersComponent,
-        children:[
-            {
-                path:'nuevo',component:AgregarActualizarUsuariosComponent
-            },
-            {
-                path:'ediciones/:id',component:AgregarActualizarUsuariosComponent
-            }
-        ]
-
-    },
+export const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'mapa',
+    component: MapaDireccionComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'usuarios',
+    pathMatch: 'full',
+  },
+  {
+    path: 'roles',
+    component: RolesComponent,
+    children: [
+      { path: 'inserciones', component: InsertarEditarRolesComponent },
+      { path: 'ediciones/:id', component: InsertarEditarRolesComponent },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'usuarios',
+    component: UsuariosComponent, canActivateChild:[adminRoleGuard],
+    children: [
+      { path: 'inserciones', component: InsertarEditarUsuariosComponent, canActivate:[adminRoleGuard]},
+      { path: 'ediciones/:id', component: InsertarEditarUsuariosComponent },
+    ],
+    canActivate: [seguridadGuard, adminRoleGuard], 
+  },
+  {
+    path: 'rutas',
+    component: RutasComponent,
+    children: [
+      { path: 'inserciones', component: AgregarActualizarRutasComponent },
+      { path: 'ediciones/:id', component: AgregarActualizarRutasComponent },
+      { path: 'mapa', component: MapaDireccionComponent },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'metricas',
+    component: MetricasComponent,
+    children: [
+      { path: 'inserciones', component: InsertarEditarMetricasComponent },
+      { path: 'ediciones/:id', component: InsertarEditarMetricasComponent },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'catmosferica',
+    component: CatmosfericasComponent,
+    children: [
+      { path: 'inserciones', component: InsertarEditarCatmosfericasComponent },
+      {
+        path: 'ediciones/:id',
+        component: InsertarEditarCatmosfericasComponent,
+      },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'incidentes',
+    component: IncidentesComponent,
+    children: [
+      { path: 'inserciones', component: InsertarEditarIncidentesComponent },
+      { path: 'ediciones/:id', component: InsertarEditarIncidentesComponent },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'recomendaciones',
+    component: RecomendacionesComponent,
+    children: [
+      {
+        path: 'inserciones',
+        component: InsertarEditarRecomendacionesComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertarEditarRecomendacionesComponent,
+      },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  { path: 'contactoemergencia', component: ContactoEmergenciaComponent },
+  {
+    path: 'respuesta',
+    component: RespuestasComponent,
+    children: [
+      {
+        path: 'inserciones',
+        component: InsertarEditarRespuestasComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertarEditarRespuestasComponent,
+      },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'temaforo',
+    component: TemasforoComponent,
+    children: [
+      {
+        path: 'inserciones',
+        component: InsertarEditarTemasforoComponent,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertarEditarTemasforoComponent,
+      },
+    ],
+    canActivate: [seguridadGuard],
+  },
+  {
+    path: 'homes',
+    component: HomeComponent,
+    canActivate: [seguridadGuard],
+  },
 ];
-   
