@@ -10,3 +10,4 @@
 // Commit 10 - Optimiza el uso de servicios HTTP
 // Commit 11 - Agrega documentación interna
 // Commit 12 - Prepara archivos para test unitarios
+// Commit 13 - Actualización final de la rama santiago
