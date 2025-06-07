@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { ListarusuariosComponent } from './listarusuarios/listarusuarios.component';
 
 @Component({
   selector: 'app-usuarios',
-  imports: [RouterOutlet,ListarusuariosComponent],
+  imports: [],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })
 export class UsuariosComponent {
-  constructor(public route:ActivatedRoute){}
+
 }
