@@ -4,5 +4,5 @@ export class Metrica{
     caloriasQuemadas:number=0
     tiempoEfectivoMinutos:number=0
     fecha:Date=new Date()
-    ruta: number=0
+    idRuta: number=0
 }

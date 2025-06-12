@@ -1,2 +1,17 @@
 import { Routes } from '@angular/router';
-export const routes: Routes = [];
+import { MetricasComponent } from './components/metricas/metricas.component';
+import { InsertarmetricasComponent } from './components/metricas/insertarmetricas/insertarmetricas.component';
+
+export const routes: Routes = [
+    {
+        path:'metricas',component:MetricasComponent,
+        children:[
+            {
+                path:'nuevo', component:InsertarmetricasComponent
+            }
+
+        ]
+    }
+
+
+];

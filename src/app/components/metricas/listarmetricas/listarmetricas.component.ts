@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { Metrica } from '../../../models/metrica';
 import { MetricasService } from '../../../services/metricas.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-listarmetricas',
-  imports: [MatTableModule],
+  imports: [MatTableModule,CommonModule],
   templateUrl: './listarmetricas.component.html',
   styleUrl: './listarmetricas.component.css'
 })

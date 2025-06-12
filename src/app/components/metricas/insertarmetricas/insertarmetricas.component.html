@@ -1,1 +1,56 @@
-<p>insertarmetricas works!</p>
+<div>
+  <div><h1>Registro</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field>
+        <mat-label>Numero pasos</mat-label>
+        <input matInput formControlName="numeroPasos" />
+        <mat-error *ngIf="form.get('numeroPasos')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <div>
+        <mat-form-field>
+        <mat-label>Calorias Quemadas</mat-label>
+        <input matInput formControlName="caloriasQuem" />
+        <mat-error *ngIf="form.get('caloriasQuem')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      </div>
+      <br />
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fecha')?.hasError('required')">
+          La fecha es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Tiempo</mat-label>
+        <input matInput formControlName="tiempoEfectivo" />
+        <mat-error *ngIf="form.get('tiempoEfectivo')?.hasError('required')">
+          El monto es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+        <mat-form-field>
+        <mat-label>Codigo Ruta</mat-label>
+        <input matInput formControlName="iDRuta" />
+        <mat-error *ngIf="form.get('iDRuta')?.hasError('required')">
+          El monto es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button matButton="elevated">Registrar</button>
+    </form>
+  </div>
+</div>
