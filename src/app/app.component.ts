@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AdminComponent } from './components/principal/admin/admin.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
+  imports: [AdminComponent],
+  templateUrl:'./app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'visiotechfront';
+  title = 'frontVisiontech';
 }

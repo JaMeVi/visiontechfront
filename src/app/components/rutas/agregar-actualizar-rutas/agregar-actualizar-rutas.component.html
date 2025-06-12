@@ -1,0 +1,74 @@
+<div>
+  <div><h1>Registro</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field>
+        <mat-label>Ruta</mat-label>
+        <input matInput formControlName="nombreruta" />
+        <mat-error *ngIf="form.get('nombreruta')?.hasError('required')">
+          El nombre de la ruta es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <div>
+         <mat-form-field>
+        <mat-label>Destino</mat-label>
+        <input matInput formControlName="destinor" />
+        <mat-error *ngIf="form.get('destinor')?.hasError('required')">
+          El destino es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br>
+       <mat-form-field>
+        <mat-label>Inicio</mat-label>
+        <input matInput formControlName="inicior" />
+        <mat-error *ngIf="form.get('inicior')?.hasError('required')">
+          El inicio de la ruta es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+        <label>Favorito</label>
+        <mat-radio-group formControlName="favoritor">
+          <mat-radio-button [value]="true">Favorito</mat-radio-button>
+          <mat-radio-button [value]="false">No favorito</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br />
+      <mat-form-field>
+        <mat-label>Distancia en metros</mat-label>
+        <input matInput formControlName="distanciametros" />
+        <mat-error *ngIf="form.get('distanciametros')?.hasError('required')">
+          La distancia en metros es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+       <mat-form-field>
+        <mat-label>Tiempo de ruta</mat-label>
+        <input matInput formControlName="tiemporuta" />
+        <mat-error *ngIf="form.get('tiemporuta')?.hasError('required')">
+          El tiempo de la ruta es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+       <mat-form-field>
+        <mat-label>Longitud</mat-label>
+        <input matInput formControlName="longitudr" />
+        <mat-error *ngIf="form.get('longitudr')?.hasError('required')">
+          La longitud de la ruta es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+       <mat-form-field>
+        <mat-label>Latitud</mat-label>
+        <input matInput formControlName="latitudr" />
+        <mat-error *ngIf="form.get('latitudr')?.hasError('required')">
+          La latitud de la ruta obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+      <button matButton="elevated">Registrar ruta</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,29 @@
+<div>
+  <div><h1>Registro</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field>
+        <mat-label>Recomendación</mat-label>
+        <input matInput formControlName="comentarior" />
+        <mat-error *ngIf="form.get('comentarior')?.hasError('required')">
+          El comentario de la recomendación es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+      <br />
+
+      <mat-form-field>
+        <mat-label>Puntuación</mat-label>
+        <input matInput formControlName="puntuacionr" />
+        <mat-error *ngIf="form.get('puntuacionr')?.hasError('required')">
+          La puntuación es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">Registrar recomendacion</button>
+
+    </form>
+  </div>
+</div>
+
