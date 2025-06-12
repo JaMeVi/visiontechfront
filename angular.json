@@ -3,9 +3,34 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "visiotechfront": {
+    "frontVisiontech": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +38,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/visiotechfront",
+            "outputPath": "dist/front-visiontech",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -27,13 +52,14 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "outputMode": "server",
             "ssr": {
-              "entry": "server.ts"
+              "entry": "src/server.ts"
             }
           },
           "configurations": {
@@ -46,8 +72,8 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
@@ -64,10 +90,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "visiotechfront:build:production"
+              "buildTarget": "frontVisiontech:build:production"
             },
             "development": {
-              "buildTarget": "visiotechfront:build:development"
+              "buildTarget": "frontVisiontech:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -90,6 +116,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -97,5 +124,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d36f8694-25d9-4bf3-9b69-bc67f646962d"
   }
 }
