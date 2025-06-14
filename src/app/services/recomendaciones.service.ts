@@ -28,19 +28,13 @@ export class RecomendacionesService {
     setList(listaNueva: Recomendacion[]) {
       this.listaCambio.next(listaNueva);
     }
-    actualizar(id: number, ruta: Recomendacion): Observable<Recomendacion> {
-    return this.http.put<Recomendacion>(`${this.url}/${id}`, ruta).pipe(
-      tap(() => this.actualizarLista())
-    );
-  }
-  
-  eliminar(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${id}`).pipe(
-      tap(() => this.actualizarLista())
-    );
-  }
-  
-  private actualizarLista(): void {
-    this.list().subscribe(data => this.listaCambio.next(data));
-  }
+    listId(id:number){
+      return this.http.get<Recomendacion>(`${this.url}/${id}`)
+    }
+    update(r:Recomendacion){
+      return this.http.put(this.url,r)
+    }
+    deleteR(id:number){
+      return this.http.delete(`${this.url}/${id}`)
+    }
   }

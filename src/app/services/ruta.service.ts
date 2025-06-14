@@ -3,7 +3,6 @@ import { environment } from '../environments/environment';
 import { Ruta } from '../models/ruta';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
@@ -25,19 +24,13 @@ private listaCambio = new Subject<Ruta[]>();
   setList(listaNueva: Ruta[]) {
     this.listaCambio.next(listaNueva);
   }
-  actualizar(id: number, ruta: Ruta): Observable<Ruta> {
-  return this.http.put<Ruta>(`${this.url}/${id}`, ruta).pipe(
-    tap(() => this.actualizarLista())
-  );
-}
-
-eliminar(id: number): Observable<void> {
-  return this.http.delete<void>(`${this.url}/${id}`).pipe(
-    tap(() => this.actualizarLista())
-  );
-}
-
-private actualizarLista(): void {
-  this.list().subscribe(data => this.listaCambio.next(data));
-}
+  listId(id:number){
+    return this.http.get<Ruta>(`${this.url}/${id}`)
+  }
+  update(r:Ruta){
+    return this.http.put(this.url , r)
+  }
+  deleteA(id:number){
+    return this.http.delete(`${this.url}/${id}`)
+  }
 }
