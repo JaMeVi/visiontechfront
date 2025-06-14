@@ -3,11 +3,12 @@ import { RecomendacionesService } from '../../../services/recomendaciones.servic
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
+  FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
@@ -34,16 +35,27 @@ import {MatButtonModule} from '@angular/material/button';
 export class AgregarActualizarRecomendacionesComponent implements OnInit{
   form: FormGroup = new FormGroup({});
     recomendacion: Recomendacion = new Recomendacion();
+    id:number=0
+    edicion:boolean=false
   
   
   
     constructor(
       private rS: RecomendacionesService,
       private router: Router,
-      private formBuilder: FormBuilder
+      private formBuilder: FormBuilder,
+      private route:ActivatedRoute
     ) {}
   
     ngOnInit(): void {
+      this.route.params.subscribe((data:Params)=>{
+        this.id=data['id']
+        this.edicion=data['id']!=null
+        //actualizar
+        this.init()
+      
+      })
+
       this.form = this.formBuilder.group({
         comentarior: ['', Validators.required],
         puntuacionr: ['', Validators.required],
@@ -53,6 +65,20 @@ export class AgregarActualizarRecomendacionesComponent implements OnInit{
       if (this.form.valid) {
         this.recomendacion.comentario = this.form.value.nombreruta;
         this.recomendacion.puntuacion = this.form.value.destinor;
+
+        if(this.edicion){
+          this.rS.update(this.recomendacion).subscribe(()=>{
+            this.rS.list().subscribe((data)=>{
+              this.rS.setList(data);
+            });
+          });
+        }else{
+          this.rS.insert(this.recomendacion).subscribe(()=>{
+            this.rS.list().subscribe((data)=>{
+              this.rS.setList(data);
+            });
+          });
+        }
   
         this.rS.insert(this.recomendacion).subscribe(() => {
           this.rS.list().subscribe((data) => {
@@ -60,6 +86,17 @@ export class AgregarActualizarRecomendacionesComponent implements OnInit{
           });
         });
         this.router.navigate(['recomendaciones']);
+      }
+    }
+    init(){
+      if(this.edicion){
+        this.rS.listId(this.id).subscribe(data=>{
+          this.form=new FormGroup({
+            codigo:new FormControl(data.idRecomendacion),
+            comentarior:new FormControl(data.comentario),
+            puntuacionr:new FormControl(data.puntuacion),
+          })
+        })
       }
     }
   }

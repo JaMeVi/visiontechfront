@@ -7,6 +7,8 @@ import { AgregarActualizarRecomendacionesComponent } from './components/recomend
 import { VerDetalleRutaComponent } from './components/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
 import { ListarIncidentesComponent } from './components/incidentes/listar-incidentes/listar-incidentes.component';
 import { AgregarActualizarIncidentesComponent } from './components/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
+import { ListarTemaforoComponent } from './components/temaforo/listar-temaforo/listar-temaforo.component';
+import { AgregarActualizarTemaforoComponent } from './components/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
 
 export const routes: Routes = [
   {
@@ -29,6 +31,13 @@ export const routes: Routes = [
     children: [
       { path: 'nuevo', component: AgregarActualizarIncidentesComponent },
       { path: 'editar/:id', component: AgregarActualizarIncidentesComponent } // opcional
+    ]
+  },
+  {
+    path: 'temaforos', component:ListarTemaforoComponent,
+    children: [
+      { path: 'nuevo', component: AgregarActualizarTemaforoComponent },
+      { path: 'editar/:id', component: AgregarActualizarTemaforoComponent } // opcional
     ]
   },
 ];
