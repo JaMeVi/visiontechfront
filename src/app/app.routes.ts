@@ -4,24 +4,31 @@ import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actu
 
 import { ListarRecomendacionesComponent } from './components/recomendaciones/listar-recomendaciones/listar-recomendaciones.component';
 import { AgregarActualizarRecomendacionesComponent } from './components/recomendaciones/agregar-actualizar-recomendaciones/agregar-actualizar-recomendaciones.component';
+import { VerDetalleRutaComponent } from './components/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
+import { ListarIncidentesComponent } from './components/incidentes/listar-incidentes/listar-incidentes.component';
+import { AgregarActualizarIncidentesComponent } from './components/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
 
 export const routes: Routes = [
   {
-    path: 'rutas',
+    path: 'rutas', component:ListarRutasComponent,
     children: [
-      { path: '', component: ListarRutasComponent },
+      {path: 'detalle/:id', component:VerDetalleRutaComponent},
       { path: 'nuevo', component: AgregarActualizarRutasComponent },
       { path: 'editar/:id', component: AgregarActualizarRutasComponent } // opcional
     ]
   },
   {
-    path: 'recomendaciones',
+    path: 'recomendaciones', component:ListarRecomendacionesComponent,
     children: [
-      { path: '', component: ListarRecomendacionesComponent },
       { path: 'nuevo', component: AgregarActualizarRecomendacionesComponent },
       { path: 'editar/:id', component: AgregarActualizarRecomendacionesComponent } // opcional
     ]
   },
-  { path: '', redirectTo: 'rutas', pathMatch: 'full' },
-  { path: '**', redirectTo: 'rutas' } // catch-all
+  {
+    path: 'incidentes', component:ListarIncidentesComponent,
+    children: [
+      { path: 'nuevo', component: AgregarActualizarIncidentesComponent },
+      { path: 'editar/:id', component: AgregarActualizarIncidentesComponent } // opcional
+    ]
+  },
 ];

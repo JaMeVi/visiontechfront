@@ -26,19 +26,16 @@ private listaCambio = new Subject<Incidente[]>();
   setList(listaNueva: Incidente[]) {
     this.listaCambio.next(listaNueva);
   }
-actualizar(id: number, ruta: Incidente): Observable<Incidente> {
-    return this.http.put<Incidente>(`${this.url}/${id}`, ruta).pipe(
-      tap(() => this.actualizarLista())
-    );
+  listId(id:number){
+    return this.http.get<Incidente>(`${this.url}/${id}`)
   }
-  
-  eliminar(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.url}/${id}`).pipe(
-      tap(() => this.actualizarLista())
-    );
+  update(i:Incidente){
+    return this.http.put(this.url , i)
   }
-  
-  private actualizarLista(): void {
-    this.list().subscribe(data => this.listaCambio.next(data));
+  deleteA(id:number){
+    return this.http.delete(`${this.url}/${id}`)
   }
+
+
+
   }
