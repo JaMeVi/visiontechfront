@@ -21,7 +21,17 @@
         </mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary">Registrar recomendacion</button>
+      <mat-form-field>
+        <mat-label>Codigo Ruta</mat-label>
+        <input matInput formControlName="iDruta" />
+        <mat-error *ngIf="form.get('iDruta')?.hasError('required')">
+          El id de la ruta es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+
+
+      <button matButton="elevated">Registrar</button>
 
     </form>
   </div>

@@ -61,7 +61,8 @@ export class AgregarActualizarRutasComponent implements OnInit {
       inicior: ['', Validators.required],
       favoritor: ['', Validators.required],
       distanciametros: ['', Validators.required],
-      tiemporuta: ['', Validators.required]
+      tiemporuta: ['', Validators.required],
+      idusuario:['', Validators.required],
     });
   }
   aceptar() {
@@ -72,6 +73,7 @@ export class AgregarActualizarRutasComponent implements OnInit {
       this.ruta.favorito = this.form.value.favoritor;
       this.ruta.distanciaMetros = this.form.value.distanciametros;
       this.ruta.tiempoRuta = this.form.value.tiemporuta;
+      this.ruta.idUsuario=this.form.value.idusuario;
 
       if(this.edicion){
         this.rS.update(this.ruta).subscribe(()=>{
@@ -93,6 +95,7 @@ export class AgregarActualizarRutasComponent implements OnInit {
           this.rS.setList(data);
         });
       });
+      
       this.router.navigate(['rutas']);
     }
   }
@@ -107,10 +110,12 @@ export class AgregarActualizarRutasComponent implements OnInit {
           favoritor:new FormControl(data.favorito),
           distanciametros:new FormControl(data.distanciaMetros),
           tiemporuta:new FormControl(data.tiempoRuta),
+          idusuario:new FormControl(data.idUsuario)
         })
       })
     }
   }
+  
 }
 
 

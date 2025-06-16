@@ -16,7 +16,7 @@ import { RouterLink } from '@angular/router';
 export class ListarRecomendacionesComponent implements OnInit{
   dataSource: MatTableDataSource<Recomendacion> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['ID','Comentario','Puntuacion','Eliminar','Actualizar']
+  displayedColumns: string[] = ['ID','Comentario','Puntuacion','idRuta','Eliminar','Actualizar']
 
   constructor(private rS: RecomendacionesService) { }
 

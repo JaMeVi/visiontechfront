@@ -1,5 +1,5 @@
 <div>
-  <div><h1>Registro</h1></div>
+  <div><h1>{{ edicion ? 'Actualizar Ruta' : 'Registrar Ruta' }}</h1></div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field *ngIf="edicion">
@@ -58,7 +58,9 @@
         </mat-error>
       </mat-form-field>
 
-      <button matButton="elevated">Registrar ruta</button>
+      <button mat-raised-button color="primary" type="submit">
+        {{ edicion ? 'Actualizar' : 'Registrar' }}
+      </button>
     </form>
   </div>
 </div>

@@ -10,7 +10,7 @@ const base_url = environment.base;
 })
 export class IncidentesService {
 
-private url = `${base_url}/rutas`;
+private url = `${base_url}/incidentes`;
 private listaCambio = new Subject<Incidente[]>();
   constructor(private http: HttpClient) {}
   list() {

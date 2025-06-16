@@ -59,12 +59,14 @@ export class AgregarActualizarRecomendacionesComponent implements OnInit{
       this.form = this.formBuilder.group({
         comentarior: ['', Validators.required],
         puntuacionr: ['', Validators.required],
+        iDruta:['', Validators.required]
       });
     }
     aceptar() {
       if (this.form.valid) {
         this.recomendacion.comentario = this.form.value.nombreruta;
         this.recomendacion.puntuacion = this.form.value.destinor;
+        this.recomendacion.idRuta= this.form.value.iDruta;
 
         if(this.edicion){
           this.rS.update(this.recomendacion).subscribe(()=>{
@@ -95,6 +97,7 @@ export class AgregarActualizarRecomendacionesComponent implements OnInit{
             codigo:new FormControl(data.idRecomendacion),
             comentarior:new FormControl(data.comentario),
             puntuacionr:new FormControl(data.puntuacion),
+            iDruta:new FormControl(data.idRuta)
           })
         })
       }

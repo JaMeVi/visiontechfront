@@ -9,35 +9,41 @@ import { ListarIncidentesComponent } from './components/incidentes/listar-incide
 import { AgregarActualizarIncidentesComponent } from './components/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
 import { ListarTemaforoComponent } from './components/temaforo/listar-temaforo/listar-temaforo.component';
 import { AgregarActualizarTemaforoComponent } from './components/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
+import { ComponentsComponent } from './components/components.component';
 
-export const routes: Routes = [
-  {
-    path: 'rutas', component:ListarRutasComponent,
-    children: [
-      {path: 'detalle/:id', component:VerDetalleRutaComponent},
-      { path: 'nuevo', component: AgregarActualizarRutasComponent },
-      { path: 'editar/:id', component: AgregarActualizarRutasComponent } // opcional
-    ]
-  },
-  {
-    path: 'recomendaciones', component:ListarRecomendacionesComponent,
-    children: [
-      { path: 'nuevo', component: AgregarActualizarRecomendacionesComponent },
-      { path: 'editar/:id', component: AgregarActualizarRecomendacionesComponent } // opcional
-    ]
-  },
-  {
-    path: 'incidentes', component:ListarIncidentesComponent,
-    children: [
-      { path: 'nuevo', component: AgregarActualizarIncidentesComponent },
-      { path: 'editar/:id', component: AgregarActualizarIncidentesComponent } // opcional
-    ]
-  },
-  {
-    path: 'temaforos', component:ListarTemaforoComponent,
-    children: [
-      { path: 'nuevo', component: AgregarActualizarTemaforoComponent },
-      { path: 'editar/:id', component: AgregarActualizarTemaforoComponent } // opcional
-    ]
-  },
-];
+export const routes: Routes = [// Ruta por defecto
+      {
+        path: 'rutas', 
+        component: ComponentsComponent,
+        children: [
+          
+          { path: 'nuevo', component: AgregarActualizarRutasComponent },
+          { path: 'ediciones/:id', component: AgregarActualizarRutasComponent },
+           { path: 'detalle/:id', component: VerDetalleRutaComponent },
+        ]
+      },
+      {
+        path: 'recomendaciones', 
+        component: ListarRecomendacionesComponent,
+        children: [
+          { path: 'nuevo', component: AgregarActualizarRecomendacionesComponent },
+          { path: 'ediciones/:id', component: AgregarActualizarRecomendacionesComponent }
+        ]
+      },
+      {
+        path: 'incidentes', 
+        component: ListarIncidentesComponent,
+        children: [
+          { path: 'nuevo', component: AgregarActualizarIncidentesComponent },
+          { path: 'ediciones/:id', component: AgregarActualizarIncidentesComponent }
+        ]
+      },
+      {
+        path: 'temaforos', 
+        component: ListarTemaforoComponent,
+        children: [
+          { path: 'nuevo', component: AgregarActualizarTemaforoComponent },
+          { path: 'ediciones/:id', component: AgregarActualizarTemaforoComponent }
+        ]
+      }
+    ];
