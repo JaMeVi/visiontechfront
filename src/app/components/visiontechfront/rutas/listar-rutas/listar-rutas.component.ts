@@ -30,9 +30,12 @@ export class ListarRutasComponent implements OnInit{
   })
 }
 eliminar(id:number){
+    this.rS.deleteU(id).subscribe(() =>{
+
     this.rS.list().subscribe(data=>{
-      this.rS.setList(data)
+      this.rS.setList(data);
     })
+})
 }
 // Función para ver detalle (nueva)
   verDetalle(id: number): void {
