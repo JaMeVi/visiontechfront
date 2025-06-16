@@ -13,6 +13,8 @@ import { IncidentesComponent } from './components/visiontechfront/incidentes/inc
 import { AgregarActualizarIncidentesComponent } from './components/visiontechfront/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
 import { TemaforoComponent } from './components/visiontechfront/temaforo/temaforo.component';
 import { AgregarActualizarTemaforoComponent } from './components/visiontechfront/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
+import { RespuestasComponent } from './components/visiontechfront/respuestas/respuestas.component';
+import { AgregarActualizarRespuestasComponent } from './components/visiontechfront/respuestas/agregar-actualizar-respuestas/agregar-actualizar-respuestas.component';
 
 export const routes: Routes = [// Ruta por defecto
 
@@ -79,6 +81,17 @@ export const routes: Routes = [// Ruta por defecto
             },
             {
                 path:'ediciones/:id',component:AgregarActualizarTemaforoComponent
+            }
+        ]
+    },
+    {
+        path:'respuesta', component:RespuestasComponent,
+        children:[
+            {
+                path:'nuevo', component:AgregarActualizarRespuestasComponent
+            },
+            {
+                path:'ediciones/:id',component:AgregarActualizarRespuestasComponent
             }
         ]
     }

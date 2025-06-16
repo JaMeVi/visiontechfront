@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
-import { Temaforo } from '../models/temaforo';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Respuesta } from '../models/respuesta';
 const base_url = environment.base;
+
 @Injectable({
   providedIn: 'root'
 })
-export class TemaforoService {
-
-  private url = `${base_url}/temaforos`;
-private listaCambio = new Subject<Temaforo[]>();
+export class RespuestaService {
+private url = `${base_url}/respuesta`;
+private listaCambio = new Subject<Respuesta[]>();
   constructor(private http: HttpClient) {}
   list() {
-    return this.http.get<Temaforo[]>(this.url);
+    return this.http.get<Respuesta[]>(this.url);
   }
 
-  insert(tr: Temaforo) {
-    return this.http.post(this.url, tr);
+  insert(rr: Respuesta) {
+    return this.http.post(this.url, rr);
   }
   getList() {
     return this.listaCambio.asObservable();
   }
-  setList(listaNueva:Temaforo[]){
+  setList(listaNueva:Respuesta[]){
     this.listaCambio .next(listaNueva);
 
   }
 
   listId(id:number){
-    return this.http.get<Temaforo>(`${this.url}/${id}`)
+    return this.http.get<Respuesta>(`${this.url}/${id}`)
   }
-  update(tr:Temaforo){
-    return this.http.put(this.url , tr)
+  update(rr:Respuesta){
+    return this.http.put(this.url , rr)
   }
   deleteA(id:number){
     return this.http.delete(`${this.url}/${id}`)
