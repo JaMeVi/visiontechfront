@@ -1,49 +1,85 @@
 import { Routes } from '@angular/router';
-import { ListarRutasComponent } from './components/rutas/listar-rutas/listar-rutas.component';
-import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
-
-import { ListarRecomendacionesComponent } from './components/recomendaciones/listar-recomendaciones/listar-recomendaciones.component';
-import { AgregarActualizarRecomendacionesComponent } from './components/recomendaciones/agregar-actualizar-recomendaciones/agregar-actualizar-recomendaciones.component';
-import { VerDetalleRutaComponent } from './components/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
-import { ListarIncidentesComponent } from './components/incidentes/listar-incidentes/listar-incidentes.component';
-import { AgregarActualizarIncidentesComponent } from './components/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
-import { ListarTemaforoComponent } from './components/temaforo/listar-temaforo/listar-temaforo.component';
-import { AgregarActualizarTemaforoComponent } from './components/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
-import { ComponentsComponent } from './components/components.component';
+import { VisiontechfrontComponent } from './components/visiontechfront/visiontechfront.component';
+import { AgregarActualizarUsuariosComponent } from './components/visiontechfront/users/agregar-actualizar-usuarios/agregar-actualizar-usuarios.component';
+import { AgregarActualizarRutasComponent } from './components/visiontechfront/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
+import { VerDetalleRutaComponent } from './components/visiontechfront/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
+import { RolesComponent } from './components/visiontechfront/roles/roles.component';
+import { AgregarActualizarRolesComponent } from './components/visiontechfront/roles/agregar-actualizar-roles/agregar-actualizar-roles.component';
+import { UsersComponent } from './components/visiontechfront/users/users.component';
+import { RutasComponent } from './components/visiontechfront/rutas/rutas.component';
+import { RecomendacionesComponent } from './components/visiontechfront/recomendaciones/recomendaciones.component';
+import { AgregarActualizarRecomendacionesComponent } from './components/visiontechfront/recomendaciones/agregar-actualizar-recomendaciones/agregar-actualizar-recomendaciones.component';
+import { IncidentesComponent } from './components/visiontechfront/incidentes/incidentes.component';
+import { AgregarActualizarIncidentesComponent } from './components/visiontechfront/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
+import { TemaforoComponent } from './components/visiontechfront/temaforo/temaforo.component';
+import { AgregarActualizarTemaforoComponent } from './components/visiontechfront/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
 
 export const routes: Routes = [// Ruta por defecto
-      {
-        path: 'rutas', 
-        component: ComponentsComponent,
-        children: [
-          
-          { path: 'nuevo', component: AgregarActualizarRutasComponent },
-          { path: 'ediciones/:id', component: AgregarActualizarRutasComponent },
-           { path: 'detalle/:id', component: VerDetalleRutaComponent },
+
+    {path: 'roles', component:RolesComponent,
+        children:[
+            {
+                path:'nuevo', component:AgregarActualizarRolesComponent
+            },
+            {
+                path:'ediciones/:id', component:AgregarActualizarRolesComponent
+            }
         ]
-      },
-      {
-        path: 'recomendaciones', 
-        component: ListarRecomendacionesComponent,
-        children: [
-          { path: 'nuevo', component: AgregarActualizarRecomendacionesComponent },
-          { path: 'ediciones/:id', component: AgregarActualizarRecomendacionesComponent }
+
+    },
+
+    {path:'usuarios', component:UsersComponent,
+        children:[
+            {
+                path:'nuevo',component:AgregarActualizarUsuariosComponent
+            },
+            {
+                path:'ediciones/:id',   component:AgregarActualizarUsuariosComponent
+            }
         ]
-      },
-      {
-        path: 'incidentes', 
-        component: ListarIncidentesComponent,
-        children: [
-          { path: 'nuevo', component: AgregarActualizarIncidentesComponent },
-          { path: 'ediciones/:id', component: AgregarActualizarIncidentesComponent }
+
+    },
+    {
+        path:'rutas',component:RutasComponent,
+        children:[
+            {
+                path:'nuevo',component:AgregarActualizarRutasComponent
+            },
+            {
+                path:'ediciones/:id', component:AgregarActualizarRutasComponent
+            },
+            {path: 'detalle/:id', component:VerDetalleRutaComponent},
         ]
-      },
-      {
-        path: 'temaforos', 
-        component: ListarTemaforoComponent,
-        children: [
-          { path: 'nuevo', component: AgregarActualizarTemaforoComponent },
-          { path: 'ediciones/:id', component: AgregarActualizarTemaforoComponent }
+    },
+    {path:'recomendaciones', component:RecomendacionesComponent,
+        children:[
+            {
+                path:'nuevo',component:AgregarActualizarRecomendacionesComponent
+            },
+            {
+                path:'ediciones/:id', component:AgregarActualizarRecomendacionesComponent
+            }
         ]
-      }
+    },
+    {path:'incidentes', component:IncidentesComponent,
+        children:[
+            {
+                path:'nuevo',component:AgregarActualizarIncidentesComponent
+            },
+            {
+                path:'ediciones/:id',component:AgregarActualizarIncidentesComponent 
+                       }
+            ]
+    },
+    {
+        path:'temaforos', component:TemaforoComponent,
+        children:[
+            {
+                path:'nuevo', component:AgregarActualizarTemaforoComponent
+            },
+            {
+                path:'ediciones/:id',component:AgregarActualizarTemaforoComponent
+            }
+        ]
+    }
     ];

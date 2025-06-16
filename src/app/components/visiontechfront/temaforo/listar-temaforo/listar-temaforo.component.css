@@ -1,0 +1,83 @@
+/* Fondo general */
+.container {
+  background: linear-gradient(to bottom right, #e0f7fa, #b2ebf2);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+  color: #007bb6;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 123, 182, 0.3);
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mat-header-cell {
+  background-color: #00acc1;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-cell {
+  background-color: #e0f7fa;
+  color: #004d40;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.mat-row:nth-child(even) .mat-cell {
+  background-color: #b2ebf2;
+}
+
+/* Botones */
+button[matButton] {
+  background-color: #26c6da;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 2px 2px 6px rgba(0, 172, 193, 0.3);
+}
+
+button[matButton]:hover {
+  background-color: #00acc1;
+  transform: scale(1.05);
+}
+
+/* Íconos */
+mat-icon {
+  color: white;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .mat-header-cell,
+  .mat-cell {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  button[matButton] {
+    padding: 0.3rem;
+  }
+}

@@ -1,0 +1,52 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f0f8ff; /* Celeste muy suave */
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+  width: 100%;
+  max-width: 500px;
+}
+
+h1 {
+  text-align: center;
+  color: #007BFF; /* Celeste intenso */
+  margin-bottom: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #e3f2fd; /* Fondo celeste claro en inputs */
+  border-radius: 8px;
+}
+
+.mat-select-value {
+  color: #0056b3; /* Azul fuerte para texto */
+}
+
+button {
+  width: 100%;
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

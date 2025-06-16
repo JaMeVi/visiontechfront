@@ -1,0 +1,136 @@
+/* Estilos generales */
+.container {
+  padding: 2rem;
+  background-color: #f0f8ff; /* Fondo azul claro */
+  min-height: 100vh;
+}
+
+h1 {
+  color: #0056b3; /* Azul VisionTech */
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4fc3f7, #0056b3); /* Degradado celeste a azul */
+}
+
+/* Estilos para la tabla */
+.mat-elevation-z8 {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 87, 179, 0.15); /* Sombra azul */
+}
+
+.mat-mdc-table {
+  background-color: white;
+}
+
+.mat-mdc-header-row {
+  background: linear-gradient(135deg, #0077cc, #0056b3) !important; /* Fondo azul degradado */
+}
+
+.mat-mdc-header-cell {
+  color: white !important;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.mat-mdc-row {
+  transition: background-color 0.3s ease;
+}
+
+.mat-mdc-row:hover {
+  background-color: #e1f0fa !important; /* Celeste claro al pasar mouse */
+}
+
+.mat-mdc-cell {
+  padding: 1rem !important;
+  color: #003366; /* Azul oscuro para texto */
+  border-bottom: 1px solid #e1f0fa !important;
+}
+
+/* Estilos para los botones */
+.mat-mdc-icon-button {
+  transition: all 0.3s ease;
+}
+
+.mat-mdc-icon-button.mat-accent {
+  color: #0077cc; /* Azul para iconos */
+}
+
+.mat-mdc-icon-button.mat-warn {
+  color: #e53935; /* Rojo para eliminar */
+}
+
+button[mat-button] {
+  min-width: 0;
+  padding: 0 8px;
+}
+
+/* Estilos para estado activo/inactivo */
+.active-status {
+  color: #2e7d32; /* Verde para activo */
+  font-weight: 500;
+}
+
+.inactive-status {
+  color: #d32f2f; /* Rojo para inactivo */
+  font-weight: 500;
+}
+
+/* Estilos para los iconos */
+mat-icon {
+  vertical-align: middle;
+}
+
+/* Efectos hover para botones */
+.mat-mdc-icon-button:hover {
+  transform: scale(1.1);
+  background-color: rgba(0, 119, 204, 0.1) !important; /* Fondo azul muy claro */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .mat-mdc-header-cell, 
+  .mat-mdc-cell {
+    padding: 0.5rem !important;
+    font-size: 0.9rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Personalización adicional para columnas específicas */
+.mat-column-c3 { /* Columna Enabled */
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-column-c9, /* Columnas de acciones */
+.mat-column-c10 {
+  text-align: center;
+}
+
+/* Estilo para filas alternas */
+.mat-mdc-row:nth-child(even) {
+  background-color: #f8fbff; /* Azul muy claro alterno */
+}

@@ -8,6 +8,7 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class TemaforoService {
+
   private url = `${base_url}/temaforo`;
 private listaCambio = new Subject<Temaforo[]>();
   constructor(private http: HttpClient) {}

@@ -1,0 +1,41 @@
+<div class="detalle-container">
+    <h1>Detalle de Ruta</h1>
+    
+    <div class="detalle-card">
+        <h2>{{ruta.nombreRuta}}</h2>
+        
+        <div class="detalle-row">
+            <span class="detalle-label">ID:</span>
+            <span>{{ruta.idRuta}}</span>
+        </div>
+        
+        <div class="detalle-row">
+            <span class="detalle-label">Destino:</span>
+            <span>{{ruta.destino}}</span>
+        </div>
+        
+        <div class="detalle-row">
+            <span class="detalle-label">Inicio:</span>
+            <span>{{ruta.inicio}}</span>
+        </div>
+        
+        <div class="detalle-row">
+            <span class="detalle-label">Estado:</span>
+            <span>{{ruta.favorito ? 'Favorita' : 'Normal'}}</span>
+        </div>
+        
+        <div class="detalle-row">
+            <span class="detalle-label">Distancia:</span>
+            <span>{{ruta.distanciaMetros}} metros</span>
+        </div>
+        
+        <div class="detalle-row">
+            <span class="detalle-label">Tiempo estimado:</span>
+            <span>{{ruta.tiempoRuta}} minutos</span>
+        </div>
+        
+        <button mat-raised-button color="primary" (click)="volver()">
+            <mat-icon>arrow_back</mat-icon> Volver al listado
+        </button>
+    </div>
+</div>

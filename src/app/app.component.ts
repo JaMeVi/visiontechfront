@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { ComponentsComponent } from "./components/components.component";
+import { VisiontechfrontComponent } from "./components/visiontechfront/visiontechfront.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ ComponentsComponent],
+   standalone: true,
+  imports: [RouterOutlet],
   templateUrl:'./app.component.html',
   styleUrl: './app.component.css'
 })

@@ -6,5 +6,5 @@ export class Ruta{
     favorito:boolean=false
     distanciaMetros:number=0
     tiempoRuta:number=0
-    idUsuario:number=0
+
 }
