@@ -1,112 +1,53 @@
-/* Estilos generales */
 .container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f8fbfe;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.1);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
-  color: #0078d4;
-  font-size: 2.5rem;
-  margin-bottom: 25px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  position: relative;
-  display: inline-block;
+  text-align: center;
+  color: #3f51b5;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-h1::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, #0078d4, #4fc3f7);
-  border-radius: 3px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Estilos para la tabla */
-.mat-elevation-z8 {
+mat-form-field {
   width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 120, 212, 0.15);
-  background: white;
 }
 
-.mat-header-cell {
-  background: linear-gradient(135deg, #0078d4, #4fc3f7);
-  color: white !important;
+button {
+  width: fit-content;
+  align-self: center;
+  padding: 0.7rem 2rem;
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  border-radius: 8px;
+  text-transform: uppercase;
 }
 
-.mat-cell {
-  padding: 12px 16px;
-  color: #333;
-  border-bottom: 1px solid #e1f5fe;
+table {
+  width: 100%;
+  margin-top: 1rem;
 }
 
-.mat-row:nth-child(even) {
-  background-color: #f5faff;
+mat-paginator {
+  margin-top: 1rem;
 }
 
-.mat-row:hover {
-  background-color: #e1f5fe !important;
-  transition: background-color 0.3s ease;
+/* Icon buttons */
+button mat-icon {
+  color: #3f51b5;
 }
 
-/* Estilos para el paginador */
-.mat-paginator {
-  background: #f8fbfe;
-  border-radius: 0 0 8px 8px;
-  border-top: 1px solid #e1f5fe;
-  margin-top: -1px;
-}
-
-.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
-  color: #0078d4;
-}
-
-.mat-paginator .mat-paginator-navigation-previous,
-.mat-paginator .mat-paginator-navigation-next {
-  color: #0078d4;
-}
-
-/* Estilos para el estado "Sin usuario" */
-.sinUsuario {
-  color: #90a4ae;
-  font-style: italic;
-}
-
-/* Efectos especiales */
-.mat-header-row {
-  transition: all 0.3s ease;
-}
-
-.mat-header-row:hover {
-  background-color: rgba(0, 120, 212, 0.9);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
-  
-  .mat-cell, .mat-header-cell {
-    padding: 8px 12px;
-    font-size: 0.9rem;
-  }
+/* Adjust button hover */
+button:hover mat-icon {
+  color: #1a237e;
 }
