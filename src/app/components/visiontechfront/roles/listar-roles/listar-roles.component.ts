@@ -37,9 +37,12 @@ ngOnInit(): void {
   });
 }
 eliminar(id:number){
+    this.rS.deleteU(id).subscribe(() =>{
+
     this.rS.list().subscribe(data=>{
-      this.rS.setList(data)
+      this.rS.setList(data);
     })
+})
 }
  @ViewChild(MatPaginator) paginator!: MatPaginator;
     ngAfterViewInit() {

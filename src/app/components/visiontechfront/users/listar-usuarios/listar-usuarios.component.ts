@@ -31,9 +31,12 @@ export class ListarUsuariosComponent implements OnInit, AfterViewInit{
   })
 }
 eliminar(id:number){
+    this.uS.deleteU(id).subscribe(() =>{
+
     this.uS.list().subscribe(data=>{
-      this.uS.setList(data)
+      this.uS.setList(data);
     })
+})
 }
 @ViewChild(MatPaginator) paginator!: MatPaginator;
 

@@ -29,9 +29,12 @@ export class ListarIncidentesComponent {
   })
 }
 eliminar(id:number){
+    this.iS.deleteA(id).subscribe(() =>{
+
     this.iS.list().subscribe(data=>{
-      this.iS.setList(data)
+      this.iS.setList(data);
     })
+})
 }
 
 }

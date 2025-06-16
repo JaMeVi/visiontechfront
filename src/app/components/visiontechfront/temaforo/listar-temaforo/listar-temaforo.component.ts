@@ -30,9 +30,12 @@ dataSource: MatTableDataSource<Temaforo> = new MatTableDataSource()
   })
 }
 eliminar(id:number){
-    this.tS.list().subscribe(data=>{
-      this.tS.setList(data)
-    })
-}
+  this.tS.deleteA(id).subscribe(() =>{
 
+    this.tS.list().subscribe(data=>{
+      this.tS.setList(data);
+    })
+})
+
+}
 }

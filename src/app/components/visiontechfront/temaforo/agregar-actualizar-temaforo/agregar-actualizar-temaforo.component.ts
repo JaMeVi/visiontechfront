@@ -34,11 +34,11 @@ import { UserService } from '../../../../services/user.service';
   templateUrl: './agregar-actualizar-temaforo.component.html',
   styleUrl: './agregar-actualizar-temaforo.component.css'
 })
-export class AgregarActualizarTemaforoComponent {
+export class AgregarActualizarTemaforoComponent implements OnInit{
    form: FormGroup = new FormGroup({});
    listarUsuarios: User[]=[];
   temaforo: Temaforo = new Temaforo();
-  estado:boolean=true
+  estado:boolean=false
 
   id:number=0
   edicion:boolean=false
