@@ -1,77 +1,74 @@
 <div class="container">
-    <div style="text-align: center;margin: 5%;">
+    <div style="text-align: center; margin: 5%;">
         <h1>Lista de Rutas</h1>
     </div>
     <div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-          
-            <!-- Position Column -->
-            <ng-container matColumnDef="Ruta Id">
-              <th mat-header-cell *matHeaderCellDef> ID</th>
-              <td mat-cell *matCellDef="let element"> {{element.idRuta}} </td>
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.idRuta}} </td>
             </ng-container>
           
-            <!-- Name Column -->
-            <ng-container matColumnDef="Nombre de Ruta">
-              <th mat-header-cell *matHeaderCellDef> Nombre de Ruta </th>
-              <td mat-cell *matCellDef="let element"> {{element.nombreRuta}} </td>
+            <!-- Nombre Column -->
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef> Nombre de Ruta </th>
+                <td mat-cell *matCellDef="let element"> {{element.nombreRuta}} </td>
             </ng-container>
 
-             <!-- Name Column -->
-            <ng-container matColumnDef="Destino">
-              <th mat-header-cell *matHeaderCellDef> Destino </th>
-              <td mat-cell *matCellDef="let element"> {{element.destino}} </td>
+            <!-- Destino Column -->
+            <ng-container matColumnDef="destino">
+                <th mat-header-cell *matHeaderCellDef> Destino </th>
+                <td mat-cell *matCellDef="let element"> {{element.destino}} </td>
             </ng-container>
 
-             <!-- Name Column -->
-            <ng-container matColumnDef="Inicio">
-              <th mat-header-cell *matHeaderCellDef> Inicio </th>
-              <td mat-cell *matCellDef="let element"> {{element.inicio}} </td>
+            <!-- Destino Column -->
+            <ng-container matColumnDef="inicio">
+                <th mat-header-cell *matHeaderCellDef> Inicio </th>
+                <td mat-cell *matCellDef="let element"> {{element.inicio}} </td>
             </ng-container>
 
-            <!-- Weight Column -->
-            <ng-container matColumnDef="Favorito">
-              <th mat-header-cell *matHeaderCellDef> Estado </th>
-              <td mat-cell *matCellDef="let element"> {{element.favorito?'Activo':'Inactivo'}} </td>
+             <!-- Ver Detalle Column -->
+            <ng-container matColumnDef="verDetalleRuta">
+                <th mat-header-cell *matHeaderCellDef> Detalle </th>
+                <td mat-cell *matCellDef="let element">
+                  <button mat-button (click)="verDetalle(element.idRuta)"> 
+                    <mat-icon>visibility</mat-icon> Ver
+                  </button>
+                </td>
             </ng-container>
+             <!-- Symbol Column -->
+              <ng-container matColumnDef="Actualizar">
+                <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+                <td mat-cell *matCellDef="let element">
 
-              <!-- Symbol Column -->
-            <ng-container matColumnDef="Distancia en metros">
-                <th mat-header-cell *matHeaderCellDef> Distancia en metros </th>
-                <td mat-cell *matCellDef="let element"> {{element.distanciaMetros}} </td>
-              </ng-container>
-              <!-- Symbol Column -->
-            <ng-container matColumnDef="Tiempo de ruta">
-                <th mat-header-cell *matHeaderCellDef> Tiempo de ruta </th>
-                <td mat-cell *matCellDef="let element"> {{element.tiempoRuta}} </td>
-              </ng-container>
+         <button matButton [routerLink]="['ediciones', element.idRuta]"
+         >
+         <mat-icon>edit</mat-icon> 
+        </button>
+        </td>
 
-              <!-- Symbol Column -->
-            <ng-container matColumnDef="Longitud">
-                <th mat-header-cell *matHeaderCellDef> Longitud </th>
-                <td mat-cell *matCellDef="let element"> {{element.longitud}} </td>
-              </ng-container>
+      </ng-container>
 
-              <!-- Symbol Column -->
-            <ng-container matColumnDef="Latitud">
-                <th mat-header-cell *matHeaderCellDef> Latitud </th>
-                <td mat-cell *matCellDef="let element"> {{element.latitud}} </td>
-              </ng-container>
-              <ng-container matColumnDef="Acciones">
-  <th mat-header-cell *matHeaderCellDef> Acciones </th>
-  <td mat-cell *matCellDef="let element">
-    <button mat-button color="warn" (click)="eliminar(element.idRuta)">Eliminar</button>
-    
-  </td>
-</ng-container>
-          
+      <ng-container matColumnDef="Eliminar">
+
+        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+
+        <td mat-cell *matCellDef="let element">
+
+         <button matButton (click)="eliminar(element.idRuta)"
+         >
+         <mat-icon>delete</mat-icon>
+        </button>
+        </td>
+
+      </ng-container>
+
+
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-          </table>
-          
-          
+        </table>
     </div>
 </div>

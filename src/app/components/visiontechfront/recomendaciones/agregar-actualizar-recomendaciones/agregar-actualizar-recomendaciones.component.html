@@ -1,0 +1,33 @@
+<div>
+  <h1>{{ edicion ? 'Actualizar' : 'Registrar' }} Recomendación</h1>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="aceptar()">
+  <!-- Comentario -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Comentario</mat-label>
+    <input matInput formControlName="comentarior" placeholder="Ingrese el comentario" />
+  </mat-form-field>
+
+  <!-- Puntuación (Escala del 1 al 5) -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Puntuación</mat-label>
+    <mat-select formControlName="puntuacionr" placeholder="Seleccione una puntuación">
+      <mat-option *ngFor="let p of puntuaciones" [value]="p.value">
+        {{ p.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Ruta (Si estás seleccionando la ruta por ID manual) -->
+  <mat-form-field class="example-full-width">
+    <mat-label>Ruta</mat-label>
+    <input matInput formControlName="idruta" placeholder="Ingrese ID de Ruta" />
+  </mat-form-field>
+
+  <!-- Botón -->
+  <button mat-raised-button color="primary" type="submit">
+    {{ edicion ? 'Actualizar' : 'Registrar' }}
+  </button>
+</form>
+

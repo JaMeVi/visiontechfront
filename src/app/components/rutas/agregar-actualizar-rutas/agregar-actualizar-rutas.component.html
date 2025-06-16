@@ -1,7 +1,14 @@
 <div>
-  <div><h1>Registro</h1></div>
+  <div><h1>{{ edicion ? 'Actualizar Ruta' : 'Registrar Ruta' }}</h1></div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El codigo es obligatorio!!
+        </mat-error>
+      </mat-form-field>
       <mat-form-field>
         <mat-label>Ruta</mat-label>
         <input matInput formControlName="nombreruta" />
@@ -51,23 +58,9 @@
         </mat-error>
       </mat-form-field>
 
-       <mat-form-field>
-        <mat-label>Longitud</mat-label>
-        <input matInput formControlName="longitudr" />
-        <mat-error *ngIf="form.get('longitudr')?.hasError('required')">
-          La longitud de la ruta es obligatorio!!
-        </mat-error>
-      </mat-form-field>
-
-       <mat-form-field>
-        <mat-label>Latitud</mat-label>
-        <input matInput formControlName="latitudr" />
-        <mat-error *ngIf="form.get('latitudr')?.hasError('required')">
-          La latitud de la ruta obligatorio!!
-        </mat-error>
-      </mat-form-field>
-
-      <button matButton="elevated">Registrar ruta</button>
+      <button mat-raised-button color="primary" type="submit">
+        {{ edicion ? 'Actualizar' : 'Registrar' }}
+      </button>
     </form>
   </div>
 </div>

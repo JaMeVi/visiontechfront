@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
-import { Ruta } from '../models/ruta';
-import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-const base_url = environment.base;
+import { Subject } from 'rxjs';
+import { Ruta } from '../models/ruta';
+
+const base_url=environment.base;
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class RutaService {
-  private url = `${base_url}/rutas`;
-private listaCambio = new Subject<Ruta[]>();
+private url = `${base_url}/rutas`;
+  private listaCambio = new Subject<Ruta[]>();
   constructor(private http: HttpClient) {}
   list() {
     return this.http.get<Ruta[]>(this.url);
@@ -30,7 +33,7 @@ private listaCambio = new Subject<Ruta[]>();
   update(r:Ruta){
     return this.http.put(this.url , r)
   }
-  deleteA(id:number){
+  deleteU(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
 }

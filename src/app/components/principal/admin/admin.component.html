@@ -1,5 +1,16 @@
-<router-outlet></router-outlet>
-
-<div [hidden]="route.children.length!==0">
-    <app-listar-rutas></app-listar-rutas>
-</div>
+<nav class="menu-container">
+  <div class="menu-logo">
+    <h2>Mi Aplicación</h2>
+  </div>
+  <ul class="menu-items">
+    <li>
+      <a routerLink="/incidentes" routerLinkActive="active">Incidentes</a>
+    </li>
+    <li>
+      <a routerLink="/recomendaciones" routerLinkActive="active">Recomendaciones</a>
+    </li>
+    <li>
+      <a routerLink="/rutas" routerLinkActive="active">Rutas</a>
+    </li>
+  </ul>
+</nav>
