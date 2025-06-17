@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CondicionAtmosferica } from '../models/condicionatmosferica';
+import { CondicionAtmosferica } from '../../../models/condicionatmosferica';
+
 const base_url = environment.base;
 
 @Injectable({

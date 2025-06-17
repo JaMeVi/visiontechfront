@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { ContactoEmergencia } from '../../../../models/contactoemergencia';
+
 import { ContactoemergenciaService } from '../../../../services/contactoemergencia.service';
+import { ContactoEmergencia } from '../../../../../../models/contactoemergencia';
 
 @Component({
   selector: 'app-listar-contactoemergencia',

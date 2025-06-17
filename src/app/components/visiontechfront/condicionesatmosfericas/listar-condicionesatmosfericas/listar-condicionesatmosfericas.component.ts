@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { CondicionAtmosferica } from '../../../../models/condicionatmosferica';
+
 import { CondicionatmosfericaService } from '../../../../services/condicionatmosferica.service';
+import { CondicionAtmosferica } from '../../../../../../models/condicionatmosferica';
 
 
 @Component({

@@ -15,8 +15,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
-import { ContactoEmergencia } from '../../../../models/contactoemergencia';
+
 import { ContactoemergenciaService } from '../../../../services/contactoemergencia.service';
+import { ContactoEmergencia } from '../../../../../../models/contactoemergencia';
 
 
 @Component({
