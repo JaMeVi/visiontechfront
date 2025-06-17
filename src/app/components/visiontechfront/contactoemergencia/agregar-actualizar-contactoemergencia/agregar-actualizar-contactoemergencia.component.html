@@ -1,0 +1,53 @@
+<div>
+  <div><h1>{{edicion ? 'Actualizar':'Registro'}}</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El codigo es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput formControlName="correoelectronico" />
+        <mat-error *ngIf="form.get('correelectronico')?.hasError('required')">
+          El correo electronico es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+       <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombrec" />
+        <mat-error *ngIf="form.get('nombrec')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+
+
+       <mat-form-field>
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="telefonoc" />
+        <mat-error *ngIf="form.get('telefonoc')?.hasError('required')">
+          El telefono es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <br />
+
+        <mat-form-field class="form-field">
+  <mat-label>ID user</mat-label>
+  <mat-select formControlName="idu">
+    <mat-option [value]="1">1</mat-option>
+  </mat-select>
+</mat-form-field>
+            <br>
+
+      <button matButton="elevated">Registrar</button>
+    </form>
+  </div>
+</div>
+
+
+

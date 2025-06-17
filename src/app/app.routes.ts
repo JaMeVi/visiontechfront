@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { VisiontechfrontComponent } from './components/visiontechfront/visiontechfront.component';
 import { AgregarActualizarUsuariosComponent } from './components/visiontechfront/users/agregar-actualizar-usuarios/agregar-actualizar-usuarios.component';
 import { AgregarActualizarRutasComponent } from './components/visiontechfront/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
 import { VerDetalleRutaComponent } from './components/visiontechfront/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
@@ -15,6 +14,12 @@ import { TemaforoComponent } from './components/visiontechfront/temaforo/temafor
 import { AgregarActualizarTemaforoComponent } from './components/visiontechfront/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
 import { RespuestasComponent } from './components/visiontechfront/respuestas/respuestas.component';
 import { AgregarActualizarRespuestasComponent } from './components/visiontechfront/respuestas/agregar-actualizar-respuestas/agregar-actualizar-respuestas.component';
+import { MetricasComponent } from './components/visiontechfront/metricas/metricas.component';
+import { AgregarActualizarMetricasComponent } from './components/visiontechfront/metricas/agregar-actualizar-metricas/agregar-actualizar-metricas.component';
+import { CondicionesatmosfericasComponent } from './components/visiontechfront/condicionesatmosfericas/condicionesatmosfericas.component';
+import { AgregarActualizarCondicionesatmosfericasComponent } from './components/visiontechfront/condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas.component';
+import { ContactoemergenciaComponent } from './components/visiontechfront/contactoemergencia/contactoemergencia.component';
+import { AgregarActualizarContactoemergenciaComponent } from './components/visiontechfront/contactoemergencia/agregar-actualizar-contactoemergencia/agregar-actualizar-contactoemergencia.component';
 
 export const routes: Routes = [// Ruta por defecto
 
@@ -92,6 +97,39 @@ export const routes: Routes = [// Ruta por defecto
             },
             {
                 path:'ediciones/:id',component:AgregarActualizarRespuestasComponent
+            }
+        ]
+    },
+    {
+        path:'metricas', component:MetricasComponent,
+        children:[
+            {
+                path:'nuevo', component:AgregarActualizarMetricasComponent
+            },
+            {
+                path:'ediciones/:id', component:AgregarActualizarMetricasComponent
+            }
+        ]
+    },
+    {
+        path:'catmosferica', component:CondicionesatmosfericasComponent,
+        children:[
+            {
+                path:'nuevo', component:AgregarActualizarCondicionesatmosfericasComponent
+            },
+            {
+                path:'ediciones/:id', component:AgregarActualizarCondicionesatmosfericasComponent
+            }
+        ]
+    },
+    {
+        path:'contactoemergencia', component:ContactoemergenciaComponent,
+        children:[
+            {
+                path:'nuevo', component:AgregarActualizarContactoemergenciaComponent
+            }, 
+            {
+                path:'ediciones/:id', component:AgregarActualizarContactoemergenciaComponent
             }
         ]
     }
