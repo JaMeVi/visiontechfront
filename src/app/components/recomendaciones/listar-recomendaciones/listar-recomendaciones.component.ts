@@ -1,24 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { RecomendacionesService } from '../../../services/recomendaciones.service';
-import { Recomendacion } from '../../../models/recomendacion';
+import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
+
+import { MatPaginator } from '@angular/material/paginator';
+import { Recomendaciones } from '../../../models/recomendaciones';
+import { RecomendacionesService } from '../../../services/recomendaciones.service';
 
 @Component({
   selector: 'app-listar-recomendaciones',
-  imports: [MatTableModule, CommonModule, MatButtonModule, MatIconModule, RouterLink],
+  imports: [MatTableModule,CommonModule, MatButtonModule, RouterLink, MatIconModule, MatPaginator],
   templateUrl: './listar-recomendaciones.component.html',
   styleUrl: './listar-recomendaciones.component.css'
 })
-export class ListarRecomendacionesComponent implements OnInit{
-  dataSource: MatTableDataSource<Recomendacion> = new MatTableDataSource()
+export class ListarRecomendacionesComponent implements OnInit {
+   dataSource: MatTableDataSource<Recomendaciones> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['ID','Comentario','Puntuacion','idRuta','Eliminar','Actualizar']
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6']
 
-  constructor(private rS: RecomendacionesService) { }
+  constructor(private rS: RecomendacionesService, private router:Router) { }
 
   ngOnInit(): void {
     this.rS.list().subscribe(data => {
@@ -27,13 +29,17 @@ export class ListarRecomendacionesComponent implements OnInit{
     this.rS.getList().subscribe(data => {
       this.dataSource = new MatTableDataSource(data)
   })
-  }
-  eliminar(id:number){
+}
+eliminar(id:number){
+    this.rS.deleteU(id).subscribe(() =>{
+
     this.rS.list().subscribe(data=>{
-      this.rS.setList(data)
+      this.rS.setList(data);
     })
+})
 }
+ @ViewChild(MatPaginator) paginator!: MatPaginator;
+    ngAfterViewInit() {
+      this.dataSource.paginator = this.paginator;
+  }
 }
-  
-
-

@@ -1,5 +1,5 @@
 <div>
-  <div><h1>Registro</h1></div>
+  <div><h1>{{edicion ? 'Actualizar':'Registro'}}</h1></div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field *ngIf="edicion">

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Incidente } from '../../../models/incidente';
-import { IncidentesService } from '../../../services/incidentes.service';
+
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
+import { IncidenteService } from '../../../services/incidente.service';
+import { Incidente } from '../../../models/incidente';
 
 @Component({
   selector: 'app-listar-incidentes',
@@ -13,12 +14,12 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table'
   templateUrl: './listar-incidentes.component.html',
   styleUrl: './listar-incidentes.component.css'
 })
-export class ListarIncidentesComponent implements OnInit{
+export class ListarIncidentesComponent {
   dataSource: MatTableDataSource<Incidente> = new MatTableDataSource()
 
   displayedColumns: string[] = ['ID', 'Tipo', 'Gravedad', 'Descripcion','Eliminar','Actualizar']
 
-  constructor(private iS: IncidentesService) { }
+  constructor(private iS: IncidenteService) { }
 
   ngOnInit(): void {
     this.iS.list().subscribe(data => {
@@ -29,10 +30,12 @@ export class ListarIncidentesComponent implements OnInit{
   })
 }
 eliminar(id:number){
+    this.iS.deleteA(id).subscribe(() =>{
+
     this.iS.list().subscribe(data=>{
-      this.iS.setList(data)
+      this.iS.setList(data);
     })
-}
+})
 }
 
-
+}

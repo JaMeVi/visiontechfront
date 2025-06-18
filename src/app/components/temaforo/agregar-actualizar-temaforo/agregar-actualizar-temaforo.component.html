@@ -1,5 +1,5 @@
 <div>
-  <div><h1>Registro</h1></div>
+  <div><h1>{{edicion ? 'Actualizar':'Registro'}}</h1></div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field *ngIf="edicion">
@@ -39,10 +39,20 @@
         </mat-error>
       </mat-form-field>
       <label>Estado</label>
-        <mat-radio-group formControlName="state" [(ngModel)]="estado">
+        <mat-radio-group formControlName="estadocerrado" [(ngModel)]="estado">
           <mat-radio-button [value]="true">Cerrado</mat-radio-button>
           <mat-radio-button [value]="false">Abierto</mat-radio-button>
         </mat-radio-group>
+
+        <mat-form-field class="form-field">
+              <mat-label>Usuario</mat-label>
+              <mat-select matInput placeholder="Usuario" formControlName="iduser">
+                @for (m of listarUsuarios; track m) {
+                <mat-option [value]="m.id">{{ m.id}} </mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+            <br>
 
       <button matButton="elevated">Registrar</button>
     </form>

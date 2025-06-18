@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RutaService } from '../../../services/ruta.service';
 import {MatIconModule} from '@angular/material/icon';
+import { RutaService } from '../../../services/ruta.service';
 
 @Component({
   selector: 'app-ver-detalle-ruta',
-  imports: [ MatIconModule],
+  standalone:true,
+  imports: [MatIconModule],
   templateUrl: './ver-detalle-ruta.component.html',
-  styleUrls: ['./ver-detalle-ruta.component.css']
+  styleUrl: './ver-detalle-ruta.component.css'
 })
-export class VerDetalleRutaComponent implements OnInit {
+export class VerDetalleRutaComponent implements OnInit { 
   ruta: any;
 
   constructor(

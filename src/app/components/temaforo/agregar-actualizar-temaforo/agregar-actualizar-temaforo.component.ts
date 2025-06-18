@@ -16,11 +16,14 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { Temaforo } from '../../../models/temaforo';
+import { User } from '../../../models/user';
 import { TemaforoService } from '../../../services/temaforo.service';
+import { UserService } from '../../../services/user.service';
+
 
 @Component({
   selector: 'app-agregar-actualizar-temaforo',
-  providers:[provideNativeDateAdapter()],
+   providers:[provideNativeDateAdapter()],
   imports: [ ReactiveFormsModule,
     MatInputModule,
     MatFormFieldModule,
@@ -32,10 +35,11 @@ import { TemaforoService } from '../../../services/temaforo.service';
   templateUrl: './agregar-actualizar-temaforo.component.html',
   styleUrl: './agregar-actualizar-temaforo.component.css'
 })
-export class AgregarActualizarTemaforoComponent implements OnInit {
-  form: FormGroup = new FormGroup({});
+export class AgregarActualizarTemaforoComponent implements OnInit{
+   form: FormGroup = new FormGroup({});
+   listarUsuarios: User[]=[];
   temaforo: Temaforo = new Temaforo();
-  estado:boolean=true
+  estado:boolean=false
 
   id:number=0
   edicion:boolean=false
@@ -45,6 +49,7 @@ export class AgregarActualizarTemaforoComponent implements OnInit {
   constructor(
     private tS: TemaforoService,
     private router: Router,
+    private uS:UserService,
     private formBuilder: FormBuilder,
     private route:ActivatedRoute
   ) {}
@@ -56,11 +61,16 @@ export class AgregarActualizarTemaforoComponent implements OnInit {
       //actualizar
       this.init()
     })
+     // Cargar lista de ciudades
+    this.uS.list().subscribe((data) => {
+      this.listarUsuarios = data;
+    });
     this.form = this.formBuilder.group({
       titulotema: ['', Validators.required],
       comentariot: ['', Validators.required],
       fechacreacion: ['', Validators.required],
-      estadocerrado: ['', Validators.required]
+      estadocerrado: ['', Validators.required],
+      iduser:['', Validators.required]
     });
   }
   aceptar() {
@@ -69,6 +79,7 @@ export class AgregarActualizarTemaforoComponent implements OnInit {
       this.temaforo.comentario = this.form.value.comentariot;
       this.temaforo.fechaCreacion = this.form.value.fechacreacion;
       this.temaforo.estadoCerrado = this.form.value.estadocerrado;
+      this.temaforo.usuario.id=this.form.value.iduser;
 
       if(this.edicion){
         this.tS.update(this.temaforo).subscribe(()=>{
@@ -106,5 +117,6 @@ export class AgregarActualizarTemaforoComponent implements OnInit {
       })
     }
   }
+
 
 }

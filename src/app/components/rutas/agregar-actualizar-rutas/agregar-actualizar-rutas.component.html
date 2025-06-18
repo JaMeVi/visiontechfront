@@ -1,5 +1,5 @@
 <div>
-  <div><h1>{{ edicion ? 'Actualizar Ruta' : 'Registrar Ruta' }}</h1></div>
+  <div><h1>{{edicion ? 'Actualizar':'Registro'}}</h1></div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field *ngIf="edicion">
@@ -10,57 +10,53 @@
         </mat-error>
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Ruta</mat-label>
-        <input matInput formControlName="nombreruta" />
-        <mat-error *ngIf="form.get('nombreruta')?.hasError('required')">
+        <mat-label>Nombre de Ruta</mat-label>
+        <input matInput formControlName="nombrerutar" />
+        <mat-error *ngIf="form.get('nombrerutar')?.hasError('required')">
           El nombre de la ruta es obligatorio!!
         </mat-error>
       </mat-form-field>
       <br />
       <div>
-         <mat-form-field>
-        <mat-label>Destino</mat-label>
+        <label>Favorito</label>
+        <mat-radio-group formControlName="favorito" [(ngModel)]="estado">
+          <mat-radio-button [value]="true">Ruta Favorita</mat-radio-button>
+          <mat-radio-button [value]="false">No Favorita</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br />
+      <mat-form-field>
+        <mat-label>Punto de inicio</mat-label>
+        <input matInput formControlName="inicior" />
+        <mat-error *ngIf="form.get('inicior')?.hasError('required')">
+          El punto de inicio es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>destinor</mat-label>
         <input matInput formControlName="destinor" />
         <mat-error *ngIf="form.get('destinor')?.hasError('required')">
           El destino es obligatorio!!
         </mat-error>
       </mat-form-field>
-      <br>
-       <mat-form-field>
-        <mat-label>Inicio</mat-label>
-        <input matInput formControlName="inicior" />
-        <mat-error *ngIf="form.get('inicior')?.hasError('required')">
-          El inicio de la ruta es obligatorio!!
-        </mat-error>
-      </mat-form-field>
-
-        <label>Favorito</label>
-        <mat-radio-group formControlName="favoritor">
-          <mat-radio-button [value]="true">Favorito</mat-radio-button>
-          <mat-radio-button [value]="false">No favorito</mat-radio-button>
-        </mat-radio-group>
-      </div>
-      <br />
       <mat-form-field>
-        <mat-label>Distancia en metros</mat-label>
+        <mat-label>Distancia de la ruta </mat-label>
         <input matInput formControlName="distanciametros" />
         <mat-error *ngIf="form.get('distanciametros')?.hasError('required')">
-          La distancia en metros es obligatorio!!
+          La distancia en metros de la ruta es obligatorio!!
         </mat-error>
       </mat-form-field>
       <br />
-
        <mat-form-field>
-        <mat-label>Tiempo de ruta</mat-label>
+        <mat-label>Distancia de la ruta </mat-label>
         <input matInput formControlName="tiemporuta" />
         <mat-error *ngIf="form.get('tiemporuta')?.hasError('required')">
           El tiempo de la ruta es obligatorio!!
         </mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit">
-        {{ edicion ? 'Actualizar' : 'Registrar' }}
-      </button>
+      <button matButton="elevated">Registrar</button>
     </form>
   </div>
 </div>

@@ -1,0 +1,49 @@
+<div>
+  <div><h1>{{edicion ? 'Actualizar':'Registro'}}</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <section class="contenedor">
+        <mat-form-field *ngIf="edicion">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="codigo" />
+          <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+            El codigo es obligatorio!!
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field>
+          <mat-label>Rol</mat-label>
+          <mat-select placeholder="Rol" formControlName="rolr">
+            <mat-option *ngFor="let r of listarRoles" [value]="r.value">
+              {{ r.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('rolr')?.hasError('required')">
+            El rol es obligatorio!!
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuario</mat-label>
+          <mat-select matInput placeholder="Usuario" formControlName="userId">
+            @for (m of listaUsuarios; track m) {
+            <mat-option [value]="m.id">({{m.id}}) {{m.username + ' ' + m.telefono}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <br />
+      </section>
+      
+      <div class="button-container">
+        <button mat-flat-button class="submit-button" type="submit">
+          Aceptar
+        </button>
+      </div>
+      
+      <br />
+      <br />
+      
+      <button matButton="elevated">Registrar</button>
+    </form>
+  </div>
+</div>

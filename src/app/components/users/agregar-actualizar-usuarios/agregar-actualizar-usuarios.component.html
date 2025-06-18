@@ -1,0 +1,66 @@
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Registro</h1>
+  </div>
+  <div style="text-align: center;margin: 5%;">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <!-- cuando se agrega un obj form al html, debe ponerse en el ts -->
+      <mat-form-field *ngIf="edicion">
+        <!-- esta cajita se activará sólo si edición está en true -->
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="id" />
+        <mat-error *ngIf="form.get('id')?.hasError('required')">
+          El código es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Aplicación</mat-label>
+        <input matInput formControlName="name" />
+        <mat-error *ngIf="form.get('name')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <div>
+        <label>Estado</label>
+        <mat-radio-group formControlName="state" [(ngModel)]="estado">
+          <mat-radio-button [value]="true">Activo</mat-radio-button>
+          <mat-radio-button [value]="false">Inactivo</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br />
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateimpl" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('dateimpl')?.hasError('required')">
+          La fecha es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Monto</mat-label>
+        <input matInput formControlName="amount" />
+        <mat-error *ngIf="form.get('amount')?.hasError('required')">
+          El monto es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Tipos de Aplicaciones</mat-label>
+        <mat-select formControlName="type">
+          @for (food of tipos; track food) {
+          <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          }
+        </mat-select>
+        <mat-error *ngIf="form.get('type')?.hasError('required')">
+          El tipo es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <button matButton="elevated">Registrar</button>
+    </form>
+  </div>
+</div>

@@ -1,9 +1,10 @@
 export class User{
     id:number=0
     username:string=""
+    password:string=""
     enabled:boolean=false
     correoElectronico:string=""
     telefono:number=0
     nombre:string=""
-
+ 
 }

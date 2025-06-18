@@ -17,7 +17,9 @@ import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { Incidente } from '../../../models/incidente';
-import { IncidentesService } from '../../../services/incidentes.service';
+import { IncidenteService } from '../../../services/incidente.service';
+
+
 
 @Component({
   selector: 'app-agregar-actualizar-incidentes',
@@ -30,12 +32,11 @@ import { IncidentesService } from '../../../services/incidentes.service';
     MatRadioModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatButtonModule
-  ],
+    MatButtonModule],
   templateUrl: './agregar-actualizar-incidentes.component.html',
   styleUrl: './agregar-actualizar-incidentes.component.css'
 })
-export class AgregarActualizarIncidentesComponent implements OnInit {
+export class AgregarActualizarIncidentesComponent {
   form: FormGroup = new FormGroup({});
   incidente: Incidente = new Incidente();
 
@@ -50,7 +51,7 @@ export class AgregarActualizarIncidentesComponent implements OnInit {
 
 
   constructor(
-    private iS: IncidentesService,
+    private iS: IncidenteService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route:ActivatedRoute
@@ -107,5 +108,6 @@ export class AgregarActualizarIncidentesComponent implements OnInit {
 
   } 
 }
+
 
 }

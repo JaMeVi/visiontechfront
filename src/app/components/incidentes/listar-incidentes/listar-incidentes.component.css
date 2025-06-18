@@ -1,140 +1,53 @@
-/* Estilos generales */
 .container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Encabezado */
-.container > div:first-child {
-  background-color: #0077b6; /* Azul VisionTech principal */
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 6px rgba(0, 119, 182, 0.2);
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  background-color: #f7f9fc;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 500;
+  text-align: center;
+  color: #3f51b5;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
-/* Tabla */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  width: fit-content;
+  align-self: center;
+  padding: 0.7rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
 table {
   width: 100%;
-  border-collapse: collapse;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  margin-top: 1rem;
 }
 
-/* Cabecera de la tabla */
-th.mat-header-cell {
-  background-color: #0077b6;
-  color: white;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 12px 15px;
-  text-align: left;
+mat-paginator {
+  margin-top: 1rem;
 }
 
-/* Celdas */
-td.mat-cell {
-  padding: 12px 15px;
-  border-bottom: 1px solid #e2e8f0;
-  color: #2d3748;
+/* Icon buttons */
+button mat-icon {
+  color: #3f51b5;
 }
 
-/* Filas alternas */
-tr.mat-row:nth-child(even) {
-  background-color: #f8fafc;
-}
-
-/* Hover en filas */
-tr.mat-row:hover {
-  background-color: #ebf8ff;
-}
-
-/* Botones de acción */
-button[matButton] {
-  transition: all 0.2s ease;
-  border-radius: 4px;
-  min-width: auto;
-  padding: 0 8px;
-  margin: 0 4px;
-}
-
-/* Botón Editar */
-button[matButton][routerLink] {
-  color: #0077b6;
-}
-
-button[matButton][routerLink]:hover {
-  background-color: rgba(0, 119, 182, 0.1);
-}
-
-/* Botón Eliminar */
-button[matButton]:not([routerLink]) {
-  color: #e53e3e;
-}
-
-button[matButton]:not([routerLink]):hover {
-  background-color: rgba(229, 62, 62, 0.1);
-}
-
-/* Iconos */
-mat-icon {
-  font-size: 20px;
-  height: 20px;
-  width: 20px;
-  vertical-align: middle;
-}
-
-/* Efecto de sombra para la tabla */
-.mat-elevation-z8 {
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* Estilos para columna de Gravedad */
-td.mat-cell:contains("Alta") {
-  color: #e53e3e;
-  font-weight: 500;
-}
-
-td.mat-cell:contains("Media") {
-  color: #d69e2e;
-  font-weight: 500;
-}
-
-td.mat-cell:contains("Baja") {
-  color: #38a169;
-  font-weight: 500;
-}
-
-/* Efectos responsivos */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-  
-  th.mat-header-cell, 
-  td.mat-cell {
-    padding: 8px 10px;
-    font-size: 13px;
-  }
-  
-  button[matButton] {
-    min-width: 36px;
-    padding: 0 6px;
-  }
-  
-  mat-icon {
-    font-size: 18px;
-    height: 18px;
-    width: 18px;
-  }
+/* Adjust button hover */
+button:hover mat-icon {
+  color: #1a237e;
 }

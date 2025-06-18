@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Temaforo } from '../../../models/temaforo';
-import { TemaforoService } from '../../../services/temaforo.service';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink } from '@angular/router';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { Temaforo } from '../../../models/temaforo';
+import { TemaforoService } from '../../../services/temaforo.service';
 
 @Component({
   selector: 'app-listar-temaforo',
@@ -13,10 +13,10 @@ import {MatIconModule} from '@angular/material/icon';
   templateUrl: './listar-temaforo.component.html',
   styleUrl: './listar-temaforo.component.css'
 })
-export class ListarTemaforoComponent implements OnInit{
-  dataSource: MatTableDataSource<Temaforo> = new MatTableDataSource()
+export class ListarTemaforoComponent implements OnInit {
+dataSource: MatTableDataSource<Temaforo> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['Id','Tipo','Comentario','FechaCreacion','EstadoCerrado','Actualizar','Eliminar']
+  displayedColumns: string[] = ['Id','Titulo','Comentario','FechaCreacion','EstadoCerrado','Actualizar','Eliminar']
 
   constructor(private tS: TemaforoService, private router:Router) { }
 
@@ -30,9 +30,12 @@ export class ListarTemaforoComponent implements OnInit{
   })
 }
 eliminar(id:number){
-    this.tS.list().subscribe(data=>{
-      this.tS.setList(data)
-    })
-}
+  this.tS.deleteA(id).subscribe(() =>{
 
+    this.tS.list().subscribe(data=>{
+      this.tS.setList(data);
+    })
+})
+
+}
 }
