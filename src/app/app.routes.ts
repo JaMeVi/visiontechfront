@@ -20,6 +20,7 @@ import { CondicionesatmosfericasComponent } from './components/visiontechfront/c
 import { AgregarActualizarCondicionesatmosfericasComponent } from './components/visiontechfront/condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas.component';
 import { ContactoemergenciaComponent } from './components/visiontechfront/contactoemergencia/contactoemergencia.component';
 import { AgregarActualizarContactoemergenciaComponent } from './components/visiontechfront/contactoemergencia/agregar-actualizar-contactoemergencia/agregar-actualizar-contactoemergencia.component';
+import { BuscarPorusernameComponent } from './components/visiontechfront/users/buscar-porusername/buscar-porusername.component';
 
 export const routes: Routes = [// Ruta por defecto
 
@@ -42,6 +43,9 @@ export const routes: Routes = [// Ruta por defecto
             },
             {
                 path:'ediciones/:id',   component:AgregarActualizarUsuariosComponent
+            },
+            {
+                path:'busquedas', component:BuscarPorusernameComponent
             }
         ]
 

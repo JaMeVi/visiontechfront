@@ -33,4 +33,8 @@ export class UserService {
   deleteU(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
+  searchUser(usert:string){
+    const params={username:usert}
+    return this.http.get<User[]>(`${this.url}/busquedas`,{params})
+  }
 }
