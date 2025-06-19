@@ -1,0 +1,41 @@
+<mat-toolbar class="custom-toolbar">
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuRoles" class="btn-rojo">
+      <mat-icon>apps</mat-icon>
+     Roles
+    </button>
+  </div>
+ 
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuUsuarios" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Usuarios
+    </button>
+  </div>
+
+   <div>
+    <button mat-button [matMenuTriggerFor]="menuRutas" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Rutas
+    </button>
+  </div>
+
+
+
+
+</mat-toolbar>
+<mat-menu #menuRoles="matMenu">
+  <button mat-menu-item routerLink="/roles">Listar</button>
+  <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/roles/busquedas">Buscar por tipo</button>
+</mat-menu>
+
+<mat-menu #menuUsuarios="matMenu">
+  <button mat-menu-item routerLink="/usuarios">Listar</button>
+
+</mat-menu>
+
+<mat-menu #menuRutas="matMenu">
+  <button mat-menu-item routerLink="/rutas">Listar</button>
+
+</mat-menu>
