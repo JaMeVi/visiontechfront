@@ -1,3 +1,5 @@
+import { Roles } from "./roles"
+
 export class User{
     id:number=0
     username:string=""
@@ -5,5 +7,6 @@ export class User{
     correoElectronico:string=""
     telefono:number=0
     nombre:string=""
+    roles:Roles=new Roles()
 
 }
