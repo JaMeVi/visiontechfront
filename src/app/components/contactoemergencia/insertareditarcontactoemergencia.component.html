@@ -1,0 +1,52 @@
+<div class="container">
+  <div>
+    <h1>Registro de Contacto de Emergencia</h1>
+  </div>
+  <div>
+    <form [formGroup="form" (submit)="aceptar()" ]>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Juan" formControlName="nombreCE" />
+        <mat-error *ngIf="form.get('nombreCE')?.hasError('required')">
+          El nombre es obligatorio!</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Telefono</mat-label>
+        <input matInput placeholder="123456789" formControlName="telefonoCE" />
+        <mat-error *ngIf="form.get('telefonoCE')?.hasError('required')">
+          El Telefono es obligatorio!</mat-error
+        >
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Correo Electronico</mat-label>
+        <input
+          matInput
+          placeholder="Juan@example.com"
+          formControlName="correoElectronicoCE"
+        />
+        <mat-error
+          *ngIf="form.get('correoElectronicoCE')?.hasError('required')"
+        >
+          El Correo Electronico es obligatorio!</mat-error
+        >
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Seleccione usuario</mat-label>
+        <mat-select formControlName="usuarioCE">
+          @for (food of listaUsuarios ; track food) {
+          <mat-option [value]="food.id">{{ food.nombre }}</mat-option> }
+          <mat-error *ngIf="form.get('usuarioCE')?.hasError('required')">
+            El usuario es obligatorio!</mat-error
+          >
+        </mat-select>
+      </mat-form-field>
+      <br />
+      <button matButton="elevated">Registrar</button>
+    </form>
+  </div>
+</div>
