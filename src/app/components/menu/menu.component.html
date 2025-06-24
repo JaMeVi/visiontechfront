@@ -20,8 +20,40 @@
     </button>
   </div>
 
+     <div>
+    <button mat-button [matMenuTriggerFor]="menuMetricas" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Metricas
+    </button>
+  </div>
 
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuCatmosferica" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Condiciones Atmosfericas
+    </button>
+  </div>
 
+    <div>
+    <button mat-button [matMenuTriggerFor]="menuIncidentes" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Incidentes
+    </button>
+  </div>
+
+    <div>
+    <button mat-button [matMenuTriggerFor]="menuRecomendaciones" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Recomendaciones
+    </button>
+  </div>
+
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuCemergencia" class="btn-rojo">
+      <mat-icon>book</mat-icon>
+      Contactos de emergencia
+    </button>
+  </div>
 
 </mat-toolbar>
 <mat-menu #menuRoles="matMenu">
@@ -32,10 +64,29 @@
 
 <mat-menu #menuUsuarios="matMenu">
   <button mat-menu-item routerLink="/usuarios">Listar</button>
-
 </mat-menu>
 
 <mat-menu #menuRutas="matMenu">
   <button mat-menu-item routerLink="/rutas">Listar</button>
+</mat-menu>
 
+<mat-menu #menuMetricas="matMenu">
+  <button mat-menu-item routerLink="/metricas">Listar</button>
+  <button mat-menu-item routerLink="/metricas/inserciones">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuCatmosferica="matMenu">
+  <button mat-menu-item routerLink="/catmosferica">Listar</button>
+</mat-menu>
+
+<mat-menu #menuIncidentes="matMenu">
+  <button mat-menu-item routerLink="/incidentes">Listar</button>
+</mat-menu>
+
+<mat-menu #menuRecomendaciones="matMenu">
+  <button mat-menu-item routerLink="/recomendaciones">Listar</button>
+</mat-menu>
+
+<mat-menu #menuCemergencia="matMenu">
+  <button mat-menu-item routerLink="/contactoemergencia">Listar</button>
 </mat-menu>
