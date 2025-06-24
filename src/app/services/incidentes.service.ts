@@ -1,41 +1,47 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environments';
 import { HttpClient } from '@angular/common/http';
-import { Incidente } from '../models/incidente';
-import { Observable, Subject, tap } from 'rxjs';
+import { Subject } from 'rxjs';
+import { Incidente } from '../models/incidentes';
 
-const base_url = environment.base;
+
+const base_url=environment.base
+
 @Injectable({
   providedIn: 'root'
 })
 export class IncidentesService {
 
-private url = `${base_url}/incidentes`;
-private listaCambio = new Subject<Incidente[]>();
-  constructor(private http: HttpClient) {}
-  list() {
-    return this.http.get<Incidente[]>(this.url);
-  }
+  private url=`${base_url}/incidentes`;
+  private listaCambio = new Subject<Incidente[]>();
+ 
+  constructor(private http:HttpClient) { }
+  
+    list() {
+      return this.http.get<Incidente[]>(`${this.url}/lista`);
+    }
+  
+    insert(i: Incidente) {
+      return this.http.post(`${this.url}/nuevo`, i)
+    }
+  
+    getList() { // para actualizar automático (looks like)
+      return this.listaCambio.asObservable();
+    }
 
-  insert(r: Incidente) {
-    return this.http.post(this.url, r);
-  }
-  getList() {
-    return this.listaCambio.asObservable();
-  }
-  setList(listaNueva: Incidente[]) {
-    this.listaCambio.next(listaNueva);
-  }
-  listId(id:number){
+       setList(listaNueva: Incidente[]) {
+      this.listaCambio.next(listaNueva);
+    }
+
+  listId(id: number) {
     return this.http.get<Incidente>(`${this.url}/${id}`)
   }
-  update(i:Incidente){
-    return this.http.put(this.url , i)
-  }
-  deleteA(id:number){
-    return this.http.delete(`${this.url}/${id}`)
-  }
 
-
-
+      update(i: Incidente) {
+    return this.http.put(this.url, i)
   }
+  
+      deleteA(id: number){
+      return this.http.delete(`${this.url}/${id}`)
+    }
+}
