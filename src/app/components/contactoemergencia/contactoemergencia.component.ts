@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { ListarContactoemergenciaComponent } from "./listar-contactoemergencia/listar-contactoemergencia.component";
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
+import { ListarcontactoemergenciaComponent } from './listarcontactoemergencia/listarcontactoemergencia.component';
 
 @Component({
   selector: 'app-contactoemergencia',
-  imports: [ListarContactoemergenciaComponent, RouterOutlet],
+  imports: [ListarcontactoemergenciaComponent,RouterOutlet],
   templateUrl: './contactoemergencia.component.html',
   styleUrl: './contactoemergencia.component.css'
 })
-export class ContactoemergenciaComponent {
+export class ContactoemergenciaComponent { 
   constructor(public route:ActivatedRoute){}
-
 }
