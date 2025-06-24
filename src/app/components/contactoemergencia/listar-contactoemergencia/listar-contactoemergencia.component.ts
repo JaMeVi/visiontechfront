@@ -14,8 +14,8 @@ import { ContactoemergenciaComponent } from "../contactoemergencia.component";
     MatButtonModule,
     // RouterLink, // ayda a reconocer el evento de enrutamento del HTML
     MatIconModule],
-  templateUrl: './listarcontactoemergencia.component.html',
-  styleUrl: './listarcontactoemergencia.component.css',
+  templateUrl: './listar-contactoemergencia.component.html',
+  styleUrl: './listar-contactoemergencia.component.css',
 })
 export class ListarcontactoemergenciaComponent implements OnInit {
   dataSource: MatTableDataSource<CEmergencia> = new MatTableDataSource();
