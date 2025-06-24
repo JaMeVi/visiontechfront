@@ -5,8 +5,6 @@ import { CEmergencia } from '../../../models/contactoemergencia';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { ContactoemergenciaComponent } from "../contactoemergencia.component";
-
 @Component({
   selector: 'app-listarcontactoemergencia',  
   imports: [MatTableModule,
