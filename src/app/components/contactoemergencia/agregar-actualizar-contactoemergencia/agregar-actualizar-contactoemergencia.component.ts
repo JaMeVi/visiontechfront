@@ -13,7 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 @Component({
-  selector: 'app-insertareditarcontactoemergencia',
+  selector: 'app-agregar-actualizarcontactoemergencia',
   imports: [
     ReactiveFormsModule, 
     MatFormFieldModule,
@@ -22,8 +22,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatSelectModule
   ],
-  templateUrl: './insertareditarcontactoemergencia.component.html',
-  styleUrl: './insertareditarcontactoemergencia.component.css'
+  templateUrl: './agregar-actualizarcontactoemergencia.component.html',
+  styleUrl: './agregar-actualizarcontactoemergencia.component.css'
 })
 export class InsertareditarcontactoemergenciaComponent implements OnInit {
   form: FormGroup = new FormGroup({});
