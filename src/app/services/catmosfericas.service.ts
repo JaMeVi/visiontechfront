@@ -11,25 +11,41 @@ const base_url=environment.base
 })
 export class CatmosfericasService {
 
+  private url=`${base_url}/catmosferica`;
   private listaCambio = new Subject<CAtmosfericas[]>();
-    private url=`${base_url}/catmosferica`
-    constructor(private http:HttpClient) { }
+ 
+  constructor(private http:HttpClient) { }
   
     list() {
-      return this.http.get<CAtmosfericas[]>(this.url);
+      return this.http.get<CAtmosfericas[]>(`${this.url}/lista`);
+    }
+  
+    insert(ca: CAtmosfericas) {
+      return this.http.post(`${this.url}/inserciones`, ca)
     }
   
     getList() { // para actualizar automático (looks like)
       return this.listaCambio.asObservable();
     }
+
+       setList(listaNueva: CAtmosfericas[]) {
+      this.listaCambio.next(listaNueva);
+    }
+
+  listId(id: number) {
+    return this.http.get<CAtmosfericas>(`${this.url}/${id}`)
+  }
+
+      update(ca: CAtmosfericas) {
+    return this.http.put(this.url, ca)
+  }
   
       deleteA(id: number){
       return this.http.delete(`${this.url}/${id}`)
     }
   
-      setList(listaNueva: CAtmosfericas[]) {
-      this.listaCambio.next(listaNueva);
-    }
+  
+
   
   
   }

@@ -1,3 +1,5 @@
+import { InsertarEditarIncidentesComponent } from './components/incidentes/insertar-editar-incidentes/insertar-editar-incidentes.component';
+import { InsertarEditarCatmosfericasComponent } from './components/catmosfericas/insertar-editar-catmosfericas/insertar-editar-catmosfericas.component';
 import { CEmergencia } from './models/contactoemergencia';
 import { Routes } from '@angular/router';
 import { RolesComponent } from './components/roles/roles.component';
@@ -29,8 +31,28 @@ export const routes: Routes = [
             },
         ]
     },
-    {path:'catmosferica',component:CatmosfericasComponent}   ,
-    {path:'incidentes',component:IncidentesComponent} ,
+    {path:'catmosferica',component:CatmosfericasComponent,
+        children:[
+            {
+                path:'inserciones',component:InsertarEditarCatmosfericasComponent
+            },
+            {
+                path:'ediciones/:id',component:InsertarEditarCatmosfericasComponent
+            },
+
+        ]
+
+    }   ,
+    {path:'incidentes',component:IncidentesComponent,
+        children:[
+            {
+                path:'inserciones',component:InsertarEditarIncidentesComponent
+            },
+            {
+                path:'ediciones/:id',component:InsertarEditarIncidentesComponent
+            },
+        ]
+    } ,
     {path:'recomendaciones',component:RecomendacionesComponent},
     {path:'contactoemergencia',component:ContactoEmergenciaComponent}  
 
