@@ -1,0 +1,118 @@
+/* Estilos para la barra de herramientas */
+.custom-toolbar {
+  background: linear-gradient(135deg, #3f51b5 0%, #2196f3 100%);
+  color: white;
+  padding: 0 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+.toolbar-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-button {
+  margin: 0 8px;
+}
+
+/* Estilos para los botones del menú */
+.menu-button {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  height: 100%;
+  color: white;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.menu-icon {
+  margin-right: 8px;
+}
+
+.menu-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Estilos para los menús desplegables */
+.custom-menu {
+  margin-top: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.menu-item mat-icon {
+  margin-right: 12px;
+  color: #3f51b5;
+}
+
+.menu-item:hover {
+  background-color: #f5f5f5;
+  color: #2196f3;
+}
+
+.menu-item:hover mat-icon {
+  color: #2196f3;
+}
+
+/* Efecto para el ítem activo */
+.menu-item.active {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.menu-item.active mat-icon {
+  color: #1976d2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-toolbar {
+    padding: 0 12px;
+    height: 56px;
+  }
+  
+  .toolbar-title {
+    font-size: 1.1rem;
+    margin-right: 12px;
+  }
+  
+  .menu-text {
+    display: none;
+  }
+  
+  .menu-button {
+    padding: 0 12px;
+  }
+  
+  .menu-icon {
+    margin-right: 0;
+  }
+}

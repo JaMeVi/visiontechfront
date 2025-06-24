@@ -1,0 +1,144 @@
+/* Estilo base para formularios */
+.formulario-container {
+    background: var(--background-light);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: var(--shadow);
+}
+
+.formulario-header {
+    margin-bottom: 2rem;
+}
+
+.formulario-title {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.formulario-subtitle {
+    color: var(--text-dark);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Campos del formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--text-light);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(63, 81, 181, 0.2);
+}
+
+/* Select personalizado */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.8rem;
+    color: var(--primary-dark);
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Botones del formulario */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-form {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary-form {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary-form:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+}
+
+.btn-secondary-form {
+    background: var(--text-light);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary-form:hover {
+    background: rgba(63, 81, 181, 0.1);
+}
+
+/* Validación */
+.invalid-feedback {
+    color: #f44336;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    display: block;
+}
+
+.is-invalid {
+    border-color: #f44336 !important;
+}
+
+.is-invalid:focus {
+    box-shadow: 0 0 0 2px rgba(244, 67, 54, 0.2) !important;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .formulario-container {
+        padding: 1.5rem;
+    }
+    
+    .form-actions {
+        justify-content: center;
+    }
+    
+    .btn-form {
+        width: 100%;
+        justify-content: center;
+    }
+}

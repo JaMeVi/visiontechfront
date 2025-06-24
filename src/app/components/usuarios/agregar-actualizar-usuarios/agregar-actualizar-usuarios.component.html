@@ -1,1 +1,58 @@
-<p>agregar-actualizar-usuarios works!</p>
+<div class="container">
+  <div style="text-align: center;margin: 5%;">
+    <h1>Registro</h1>
+  </div>
+  <div style="text-align: center;margin: 5%;">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El código es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Correo Electronico</mat-label>
+        <input matInput formControlName="correoelectronico" />
+        <mat-error *ngIf="form.get('correoelectronico')?.hasError('required')">
+          El correo electronico es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <div>
+        <label>Estado</label>
+        <mat-radio-group formControlName="enabledu" [(ngModel)]="estado">
+          <mat-radio-button [value]="true">Activo</mat-radio-button>
+          <mat-radio-button [value]="false">Inactivo</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <br />
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombreu" />
+        <mat-error *ngIf="form.get('nombreu')?.hasError('required')">
+          El nombre es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="telefonou" />
+        <mat-error *ngIf="form.get('telefonou')?.hasError('required')">
+          El telefono es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="usernameu" />
+        <mat-error *ngIf="form.get('usernameu')?.hasError('required')">
+          El username es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <button matButton="elevated">Registrar</button>
+    </form>
+  </div>
+</div>

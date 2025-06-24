@@ -15,13 +15,13 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
+import { Roles } from '../../../models/roles';
+import { RolesService } from '../../../services/roles.service';
 import { Usuarios } from '../../../models/usuarios';
-import { UsuariosService } from '../../../services/usuarios.service';
-
 
 @Component({
-  selector: 'app-agregar-actualizar-usuarios',
-   providers: [provideNativeDateAdapter()],
+  selector: 'app-agregar-actualizar-roles',
+  providers: [provideNativeDateAdapter()],
   imports: [
     ReactiveFormsModule,
     MatInputModule,
@@ -30,26 +30,28 @@ import { UsuariosService } from '../../../services/usuarios.service';
     MatRadioModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatButtonModule],
-  templateUrl: './agregar-actualizar-usuarios.component.html',
-  styleUrl: './agregar-actualizar-usuarios.component.css'
+    MatButtonModule
+  ],
+  templateUrl: './agregar-actualizar-roles.component.html',
+  styleUrl: './agregar-actualizar-roles.component.css'
 })
-export class AgregarActualizarUsuariosComponent  implements OnInit{
-
+export class AgregarActualizarRolesComponent {
   form: FormGroup = new FormGroup({});
-  usuarios: Usuarios = new Usuarios();
+  roles: Roles = new Roles();
   estado: boolean = true
 
   id: number = 0
   edicion: boolean = false
 
+  listaUsuarios:Usuarios[]=[]
+
   tipos: { value: string; viewValue: string }[] = [
-    { value: "SO", viewValue: "Sistema Operativo" },
-    { value: "Ofimática", viewValue: "Ofimática" }
+    { value: "ADMINISTRADOR", viewValue: "Adminisitrador" },
+    { value: "INVITADO", viewValue: "Invitado" }
   ]
 
   constructor(
-    private uS: UsuariosService,
+    private rS: RolesService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute
@@ -65,53 +67,45 @@ export class AgregarActualizarUsuariosComponent  implements OnInit{
 
     this.form = this.formBuilder.group({
       codigo: [''],
-      correoelectronico: ['', Validators.required],
-      enabledu: ['', Validators.required],
-      nombreu: ['', Validators.required],
-      telefonou: ['', Validators.required],
-      usernameu: ['', Validators.required],
+      rolname: ['', Validators.required],
+      userid: ['', Validators.required],
     });
   }
   aceptar() {
     if (this.form.valid) {
-      this.usuarios.id = this.form.value.codigo;
-      this.usuarios.correoElectronico = this.form.value.correoelectronico;
-      this.usuarios.enabled = this.form.value.enabledu;
-      this.usuarios.nombre = this.form.value.nombre;
-      this.usuarios.telefono = this.form.value.telefonou;
-      this.usuarios.username = this.form.value.usernameu;
+      this.roles.id = this.form.value.codigo;
+      this.roles.rol = this.form.value.rolname;
+      this.roles.user.id = this.form.value.userid;
       if (this.edicion) {
         //actualizar
-        this.uS.update(this.usuarios).subscribe(() => {
-          this.uS.list().subscribe((data) => {
-            this.uS.setList(data);
+        this.rS.update(this.roles).subscribe(() => {
+          this.rS.list().subscribe((data) => {
+            this.rS.setList(data);
           });
         });
       } else {
         //insertar
-        this.uS.insert(this.usuarios).subscribe(() => {
-          this.uS.list().subscribe((data) => {
-            this.uS.setList(data);
+        this.rS.insert(this.roles).subscribe(() => {
+          this.rS.list().subscribe((data) => {
+            this.rS.setList(data);
           });
         });
       }
-      this.router.navigate(['usuarios']);
+      this.router.navigate(['roles']);
     }
   }
 
   init() {
     if (this.edicion) {
-      this.uS.listId(this.id).subscribe(data => {
+      this.rS.listId(this.id).subscribe(data => {
         this.form = new FormGroup({
           codigo: new FormControl(data.id),
-          correoelectronico: new FormControl(data.correoElectronico),
-          enabledu: new FormControl(data.enabled),
-          nombreu: new FormControl(data.nombre),
-          telefonou: new FormControl(data.telefono),
-          usernameu: new FormControl(data.username)
+          rolname: new FormControl(data.rol),
+          userid: new FormControl(data.user.id),
         })
       })
     }
   }
+
 
 }

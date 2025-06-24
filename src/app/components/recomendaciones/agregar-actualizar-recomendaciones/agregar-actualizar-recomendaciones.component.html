@@ -1,38 +1,41 @@
-<div>
-  <div><h1>Registro</h1></div>
-  <div>
-    <form [formGroup]="form" (submit)="aceptar()">
+<div class="container">
+    <div style="text-align: center;margin: 5%;">
+        <h1>Registro de versiones</h1>
+    </div>
+    <div  style="text-align: center;margin: 5%;">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Comentario</mat-label>
+                <input matInput placeholder="Buena ruta" formControlName="comentarior">
+                <mat-error *ngIf="form.get('comentarior')?.hasError('required')">
+                    El comentario es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Puntuacion</mat-label>
+                <textarea matInput placeholder="1-5" formControlName="puntuacionr"></textarea>
+                <mat-error *ngIf="form.get('puntuacion')?.hasError('required')">
+                    La puntuacion es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Seleccione aplicación</mat-label>
+                <mat-select formControlName="idruta">
+                    @for (food of listaRutas; track food) {
+                    <mat-option [value]="food.idRuta">{{food.idRuta}}</mat-option>
+                    }
+                </mat-select>
+                <mat-error *ngIf="form.get('idruta')?.hasError('required')">
+                    El id ruta es obligatoria!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <button matButton="elevated">Registrar</button>
 
-      <mat-form-field>
-        <mat-label>Recomendación</mat-label>
-        <input matInput formControlName="comentarior" />
-        <mat-error *ngIf="form.get('comentarior')?.hasError('required')">
-          El comentario de la recomendación es obligatorio!!
-        </mat-error>
-      </mat-form-field>
 
-      <br />
+        </form>
+    </div>
 
-      <mat-form-field>
-        <mat-label>Puntuación</mat-label>
-        <input matInput formControlName="puntuacionr" />
-        <mat-error *ngIf="form.get('puntuacionr')?.hasError('required')">
-          La puntuación es obligatoria!!
-        </mat-error>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Codigo Ruta</mat-label>
-        <input matInput formControlName="iDruta" />
-        <mat-error *ngIf="form.get('iDruta')?.hasError('required')">
-          El id de la ruta es obligatorio!!
-        </mat-error>
-      </mat-form-field>
-
-
-
-      <button matButton="elevated">Registrar</button>
-
-    </form>
-  </div>
 </div>
