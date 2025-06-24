@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { ListarcontactoemergenciaComponent } from './listarcontactoemergencia/listarcontactoemergencia.component';
+import { ListarcontactoemergenciaComponent } from './listarcontactoemergencia/listar-contactoemergencia.component';
 
 @Component({
   selector: 'app-contactoemergencia',
