@@ -1,43 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table'
-import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
-import { Router, RouterLink } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ContactoemergenciaService } from '../../../services/contactoemergencia.service';
-import { ContactoEmergencia } from '../../../../../models/contactoemergencia';
-
-
+import { CEmergencia } from '../../../models/contactoemergencia';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { ContactoemergenciaComponent } from "../contactoemergencia.component";
 
 @Component({
-  selector: 'app-listar-contactoemergencia',
-  imports: [MatTableModule, CommonModule, MatButtonModule, RouterLink, MatIconModule],
-  templateUrl: './listar-contactoemergencia.component.html',
-  styleUrl: './listar-contactoemergencia.component.css'
+  selector: 'app-listarcontactoemergencia',  
+  imports: [MatTableModule,
+    CommonModule,
+    MatButtonModule,
+    // RouterLink, // ayda a reconocer el evento de enrutamento del HTML
+    MatIconModule],
+  templateUrl: './listarcontactoemergencia.component.html',
+  styleUrl: './listarcontactoemergencia.component.css',
 })
-export class ListarContactoemergenciaComponent  implements OnInit{
-   dataSource: MatTableDataSource<ContactoEmergencia> = new MatTableDataSource()
+export class ListarcontactoemergenciaComponent implements OnInit {
+  dataSource: MatTableDataSource<CEmergencia> = new MatTableDataSource();
 
-  displayedColumns: string[] = ['Id','c2','c3','c4','c5','Actualizar','Eliminar']
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4'];
 
-  constructor(private cS: ContactoemergenciaService, private router:Router) { }
-
-
+  constructor(private cS: ContactoemergenciaService) {}
   ngOnInit(): void {
-    this.cS.list().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data)
-    })
-    this.cS.getList().subscribe(data => {
-      this.dataSource = new MatTableDataSource(data)
-  })
-}
-eliminar(id:number){
-    this.cS.deleteA(id).subscribe(() => {
-    // Una vez eliminado correctamente en backend, actualizamos la lista
-    this.cS.list().subscribe(data => {
-      this.cS.setList(data);
+    this.cS.list().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
     });
-  });
-}
-
+    this.cS.getList().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+    });
+  }
 }
