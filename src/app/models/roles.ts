@@ -1,7 +1,7 @@
-import { User } from "./user"
+import { Usuarios } from "./usuarios"
 
 export class Roles{
-    id:Number=0;
-    rol:string="";
-    user:User=new User();
+    id:number=0
+    rol:string=""
+    user: Usuarios=new Usuarios()
 }

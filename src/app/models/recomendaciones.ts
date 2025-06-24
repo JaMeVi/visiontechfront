@@ -1,9 +1,10 @@
-import { Ruta } from "./ruta"
+import { Rutas } from "./rutas"
+
 
 export class Recomendaciones{
     idRecomendacion:number=0
     comentario:string=""
     puntuacion:number=0
-    ruta:Ruta=new Ruta()
+    ruta:Rutas= new Rutas
 
 }

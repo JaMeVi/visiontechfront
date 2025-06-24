@@ -1,9 +1,9 @@
-import { User } from "./user"
+import { Usuarios } from "./usuarios"
 
-export class ContactoEmergencia{
+export class CEmergencia{
     idContacto:number=0
     nombre:string=""
     telefono:number=0
     correoElectronico:string=""
-    usuario:User=new User()
+    usuario:Usuarios=new Usuarios()
 }
