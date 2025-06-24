@@ -1,106 +1,74 @@
 import { Routes } from '@angular/router';
-import { AgregarActualizarUsuariosComponent } from './components/visiontechfront/users/agregar-actualizar-usuarios/agregar-actualizar-usuarios.component';
-import { AgregarActualizarRutasComponent } from './components/visiontechfront/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
-import { VerDetalleRutaComponent } from './components/visiontechfront/rutas/ver-detalle-ruta/ver-detalle-ruta.component';
-import { RolesComponent } from './components/visiontechfront/roles/roles.component';
-import { AgregarActualizarRolesComponent } from './components/visiontechfront/roles/agregar-actualizar-roles/agregar-actualizar-roles.component';
-import { UsersComponent } from './components/visiontechfront/users/users.component';
-import { RutasComponent } from './components/visiontechfront/rutas/rutas.component';
-import { RecomendacionesComponent } from './components/visiontechfront/recomendaciones/recomendaciones.component';
-import { AgregarActualizarRecomendacionesComponent } from './components/visiontechfront/recomendaciones/agregar-actualizar-recomendaciones/agregar-actualizar-recomendaciones.component';
-import { IncidentesComponent } from './components/visiontechfront/incidentes/incidentes.component';
-import { AgregarActualizarIncidentesComponent } from './components/visiontechfront/incidentes/agregar-actualizar-incidentes/agregar-actualizar-incidentes.component';
-import { TemaforoComponent } from './components/visiontechfront/temaforo/temaforo.component';
-import { AgregarActualizarTemaforoComponent } from './components/visiontechfront/temaforo/agregar-actualizar-temaforo/agregar-actualizar-temaforo.component';
-import { RespuestasComponent } from './components/visiontechfront/respuestas/respuestas.component';
-import { AgregarActualizarRespuestasComponent } from './components/visiontechfront/respuestas/agregar-actualizar-respuestas/agregar-actualizar-respuestas.component';
-import { MetricasComponent } from './components/visiontechfront/metricas/metricas.component';
-import { AgregarActualizarMetricasComponent } from './components/visiontechfront/metricas/agregar-actualizar-metricas/agregar-actualizar-metricas.component';
-import { CondicionesatmosfericasComponent } from './components/visiontechfront/condicionesatmosfericas/condicionesatmosfericas.component';
-import { AgregarActualizarCondicionesatmosfericasComponent } from './components/visiontechfront/condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas/agregar-actualizar-condicionesatmosfericas.component';
-import { ContactoemergenciaComponent } from './components/visiontechfront/contactoemergencia/contactoemergencia.component';
-import { AgregarActualizarContactoemergenciaComponent } from './components/visiontechfront/contactoemergencia/agregar-actualizar-contactoemergencia/agregar-actualizar-contactoemergencia.component';
-import { BuscarPorusernameComponent } from './components/visiontechfront/users/buscar-porusername/buscar-porusername.component';
+import { RolesComponent } from './components/roles/roles.component';
+import path from 'path';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { RutasComponent } from './components/rutas/rutas.component';
+import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
+import { AgregarActualizarUsuariosComponent } from './components/usuarios/agregar-actualizar-usuarios/agregar-actualizar-usuarios.component';
+import { AgregarActualizarRolesComponent } from './components/roles/agregar-actualizar-roles/agregar-actualizar-roles.component';
+import { RecomendacionesComponent } from './components/recomendaciones/recomendaciones.component';
+import { AgregarActualizarRecomendacionesComponent } from './components/recomendaciones/agregar-actualizar-recomendaciones/agregar-actualizar-recomendaciones.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { Incidente } from './models/incidentes';
+import { IncidentesComponent } from './components/incidentes/incidentes.component';
+import { InsertarEditarIncidentesComponent } from './components/incidentes/insertar-editar-incidentes/insertar-editar-incidentes.component';
+import { MetricasComponent } from './components/metricas/metricas.component';
+import { InsertarEditarMetricasComponent } from './components/metricas/insertar-editar-metricas/insertar-editar-metricas.component';
 
-export const routes: Routes = [// Ruta por defecto
-
-    {path: 'roles', component:RolesComponent,
+export const routes: Routes = [
+    {path:'',redirectTo:'roles', pathMatch:'full'   },
+    {path:'menu', component:MenuComponent,},
+    {path:'roles',component:RolesComponent,
         children:[
             {
-                path:'nuevo', component:AgregarActualizarRolesComponent
+                path:'nuevo', component:AgregarActualizarRolesComponent,
             },
             {
                 path:'ediciones/:id', component:AgregarActualizarRolesComponent
             }
         ]
-
     },
-
-    {path:'usuarios', component:UsersComponent,
+    {path:'usuarios',component:UsuariosComponent,
         children:[
             {
-                path:'nuevo',component:AgregarActualizarUsuariosComponent
+                path:'nuevo', component:AgregarActualizarUsuariosComponent,
             },
             {
-                path:'ediciones/:id',   component:AgregarActualizarUsuariosComponent
-            },
-            {
-                path:'busquedas', component:BuscarPorusernameComponent
-            }
-        ]
-
-    },
-    {
-        path:'rutas',component:RutasComponent,
-        children:[
-            {
-                path:'nuevo',component:AgregarActualizarRutasComponent
-            },
-            {
-                path:'ediciones/:id', component:AgregarActualizarRutasComponent
-            },
-            {path: 'detalle/:id', component:VerDetalleRutaComponent},
-        ]
-    },
-    {path:'recomendaciones', component:RecomendacionesComponent,
-        children:[
-            {
-                path:'nuevo',component:AgregarActualizarRecomendacionesComponent
-            },
-            {
-                path:'ediciones/:id', component:AgregarActualizarRecomendacionesComponent
+                path:'ediciones/:id', component:AgregarActualizarUsuariosComponent
             }
         ]
     },
-    {path:'incidentes', component:IncidentesComponent,
+    {path:'rutas',component:RutasComponent, 
         children:[
             {
-                path:'nuevo',component:AgregarActualizarIncidentesComponent
+                path:'nuevo',
+                component:AgregarActualizarRutasComponent,
             },
             {
-                path:'ediciones/:id',component:AgregarActualizarIncidentesComponent 
-                       }
-            ]
-    },
-    {
-        path:'temaforos', component:TemaforoComponent,
-        children:[
-            {
-                path:'nuevo', component:AgregarActualizarTemaforoComponent
-            },
-            {
-                path:'ediciones/:id',component:AgregarActualizarTemaforoComponent
+                path:'ediciones/:id',   
+                component:AgregarActualizarRutasComponent,
             }
         ]
     },
     {
-        path:'respuesta', component:RespuestasComponent,
+        path:'recomendaciones', component:RecomendacionesComponent,
         children:[
             {
-                path:'nuevo', component:AgregarActualizarRespuestasComponent
+                path:'nuevo',component:AgregarActualizarRecomendacionesComponent,
             },
             {
-                path:'ediciones/:id',component:AgregarActualizarRespuestasComponent
+                path:'ediciones/:id', component:AgregarActualizarRecomendacionesComponent,
+            }
+        ]
+    },
+    {
+        path:'incidentes', component:IncidentesComponent,
+        children:[
+            {
+                path:'nuevo', component:InsertarEditarIncidentesComponent,
+            },
+            {
+                path:'ediciones/:id',component:InsertarEditarIncidentesComponent,
             }
         ]
     },
@@ -108,33 +76,12 @@ export const routes: Routes = [// Ruta por defecto
         path:'metricas', component:MetricasComponent,
         children:[
             {
-                path:'nuevo', component:AgregarActualizarMetricasComponent
+                path:'nuevo', component:InsertarEditarMetricasComponent,
             },
             {
-                path:'ediciones/:id', component:AgregarActualizarMetricasComponent
-            }
-        ]
-    },
-    {
-        path:'catmosferica', component:CondicionesatmosfericasComponent,
-        children:[
-            {
-                path:'nuevo', component:AgregarActualizarCondicionesatmosfericasComponent
-            },
-            {
-                path:'ediciones/:id', component:AgregarActualizarCondicionesatmosfericasComponent
-            }
-        ]
-    },
-    {
-        path:'contactoemergencia', component:ContactoemergenciaComponent,
-        children:[
-            {
-                path:'nuevo', component:AgregarActualizarContactoemergenciaComponent
-            }, 
-            {
-                path:'ediciones/:id', component:AgregarActualizarContactoemergenciaComponent
+                path:'ediciones/:id', component:InsertarEditarMetricasComponent,
             }
         ]
     }
-    ];
+
+];
