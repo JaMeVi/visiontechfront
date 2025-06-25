@@ -13,6 +13,7 @@ import { Rutas } from '../../../models/rutas';
 import { MetricasService } from '../../../services/metricas.service';
 import { RutasService } from '../../../services/rutas.service';
 
+
 @Component({
   selector: 'app-insertar-editar-metricas',
    providers: [provideNativeDateAdapter()],
@@ -23,7 +24,8 @@ import { RutasService } from '../../../services/rutas.service';
     CommonModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatButtonModule],
+    MatButtonModule
+  ],
   templateUrl: './insertar-editar-metricas.component.html',
   styleUrl: './insertar-editar-metricas.component.css'
 })

@@ -59,13 +59,29 @@
         <th mat-header-cell *matHeaderCellDef>Latitud</th>
         <td mat-cell *matCellDef="let element"> {{element.latitud}} </td>
       </ng-container>
+      <!-- Symbol Column -->
+        <ng-container matColumnDef="c10">
+        <th mat-header-cell *matHeaderCellDef>Nombre de Uusario </th>
+        <td mat-cell *matCellDef="let element"> {{element.usuario.username}} </td>
+      </ng-container>
+            <!-- Symbol Column -->
 
-  <!-- Symbol Column -->
-      <ng-container matColumnDef="c10">
+              <ng-container matColumnDef="c11">
+          <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+            <td mat-cell *matCellDef="let element">
+               <button matButton [routerLink]="['ediciones',element.idRuta]">
+             <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+          </ng-container>
+ 
+           <!-- Symbol Column -->
+
+      <ng-container matColumnDef="c12">
         <th mat-header-cell *matHeaderCellDef> Eliminar </th>
         <td mat-cell *matCellDef="let element">
           <button matButton 
-          (click)="eliminar(element.idApp)">
+          (click)="eliminar(element.idRuta)">
           <mat-icon>delete_forever</mat-icon></button>
         </td>
       </ng-container>

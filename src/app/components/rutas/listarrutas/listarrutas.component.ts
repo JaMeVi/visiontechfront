@@ -6,13 +6,14 @@ import { CommonModule } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { RutasService } from '../../../services/rutas.service';
 import { Rutas } from '../../../models/rutas';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listarrutas',
   imports: [MatTableModule,
     CommonModule,
     MatButtonModule, 
-   // RouterLink, // ayda a reconocer el evento de enrutamento del HTML
+   RouterLink, // ayda a reconocer el evento de enrutamento del HTML
     MatIconModule],
   templateUrl: './listarrutas.component.html',
   styleUrl: './listarrutas.component.css'
@@ -21,7 +22,7 @@ export class ListarrutasComponent implements OnInit{
     
   dataSource: MatTableDataSource<Rutas> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5', 'c6','c7','c8', 'c9','c10']
+  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5', 'c6','c7','c8', 'c9','c10','c11','c12']
 
   constructor(private rS: RutasService) { }
 

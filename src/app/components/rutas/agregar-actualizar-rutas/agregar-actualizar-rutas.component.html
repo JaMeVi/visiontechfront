@@ -1,0 +1,88 @@
+<div class="container">
+    <div style="text-align: center;margin: 5%;">
+        <h1>Registro de rutas</h1>
+    </div>
+    <div  style="text-align: center;margin: 5%;">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>nombre</mat-label>
+                <input matInput placeholder="12" formControlName="nombre">
+                <mat-error *ngIf="form.get('nombre')?.hasError('required')">
+                    El nombre es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>destino</mat-label>
+                <input matInput placeholder="12" formControlName="destino">
+                <mat-error *ngIf="form.get('destino')?.hasError('required')">
+                   El destino es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+              <mat-form-field class="example-full-width">
+                <mat-label>inicio</mat-label>
+                <input matInput placeholder="12" formControlName="inicio">
+                <mat-error *ngIf="form.get('inicio')?.hasError('required')">
+                    La distancia en metros es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+             <mat-form-field class="example-full-width">
+                <mat-label>Distancia Metros</mat-label>
+                <input matInput placeholder="12" formControlName="distancia">
+                <mat-error *ngIf="form.get('distancia')?.hasError('required')">
+                    La distancia en metros es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+             <div>
+        <label>Ruta favorito</label>
+        <mat-radio-group formControlName="favorito" [(ngModel)]="estado">
+          <mat-radio-button [value]="true">Favorito</mat-radio-button>
+          <mat-radio-button [value]="false">No favorito</mat-radio-button>
+        </mat-radio-group>
+      </div>
+        <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Tiempo</mat-label>
+                <input matInput placeholder="12" formControlName="tiempo">
+                <mat-error *ngIf="form.get('tiempo')?.hasError('required')">
+                    La distancia en metros es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>longitud</mat-label>
+                <input matInput placeholder="400" formControlName="longitud">
+                <mat-error *ngIf="form.get('longitud')?.hasError('required')">
+                    longitud de la ruta es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+             <mat-form-field class="example-full-width">
+                <mat-label>Latitud</mat-label>
+                <input matInput placeholder="12" formControlName="latitud">
+                <mat-error *ngIf="form.get('latitud')?.hasError('required')">
+                    La distancia en metros es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+        
+            <br>
+            <mat-form-field>
+                <mat-label>Seleccione el usuarios </mat-label>
+                <mat-select formControlName="usuario">
+                    @for (food of listaUsuarios; track food) {
+                    <mat-option [value]="food.id">{{food.nombre}}</mat-option>
+                    }
+                </mat-select>
+                <mat-error *ngIf="form.get('usuario')?.hasError('required')">
+                    El usuario es obligatoria!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <button matButton="elevated">Registrar</button>
+        </form>
+    </div>
+</div>

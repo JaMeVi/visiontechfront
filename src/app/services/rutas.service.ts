@@ -11,25 +11,38 @@ const base_url=environment.base
 })
 export class RutasService {
 
+  private url=`${base_url}/rutas`;
   private listaCambio = new Subject<Rutas[]>();
-  private url=`${base_url}/rutas`
+  
   constructor(private http:HttpClient) { }
 
   list() {
-    return this.http.get<Rutas[]>(this.url);
+    return this.http.get<Rutas[]>(`${this.url}/lista`);
+  }
+
+    
+  insert(r: Rutas) {
+      return this.http.post(`${this.url}/inserciones`, r)
   }
 
   getList() { // para actualizar automático (looks like)
     return this.listaCambio.asObservable();
   }
 
-    deleteA(id: number){
-    return this.http.delete(`${this.url}/${id}`)
-  }
-
     setList(listaNueva: Rutas[]) {
-    this.listaCambio.next(listaNueva);
+      this.listaCambio.next(listaNueva);
   }
 
-
-}
+   listId(id: number) {
+       return this.http.get<Rutas>(`${this.url}/${id}`)
+     }
+   
+         update(r: Rutas) {
+       return this.http.put(this.url, r)
+     }
+     
+         deleteA(id: number){
+         return this.http.delete(`${this.url}/${id}`)
+       }
+     
+ }
