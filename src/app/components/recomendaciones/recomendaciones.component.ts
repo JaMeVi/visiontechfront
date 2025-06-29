@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
+import { ListarRecomendacionesComponent } from './listar-recomendaciones/listar-recomendaciones.component';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { ListarrecomendacionesComponent } from "./listarrecomendaciones/listarrecomendaciones.component";
 
 @Component({
   selector: 'app-recomendaciones',
-  imports: [ListarrecomendacionesComponent, RouterOutlet],
+  imports: [RouterOutlet,ListarRecomendacionesComponent],
   templateUrl: './recomendaciones.component.html',
   styleUrl: './recomendaciones.component.css'
 })
 export class RecomendacionesComponent {
   constructor(public route:ActivatedRoute){}
-
 }

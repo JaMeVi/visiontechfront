@@ -1,70 +1,71 @@
 <div class="container">
-   <div style="text-align: center;margin: 5%;">
-
+  <div style="text-align: center;margin: 5%;">
     <h1>Lista de Recomendaciones</h1>
-
   </div>
-
   <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+<mat-paginator
+    [pageSizeOptions]="pcPageSizeOptions"
+    [pageSize]="10"
+    showFirstLastButtons
+    aria-label="Select page">
+</mat-paginator>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!-- ID -->
-    <ng-container matColumnDef="ID">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let element">{{ element.idRecomendacion }}</td>
-    </ng-container>
-
-    <!-- Comentario -->
-    <ng-container matColumnDef="Comentario">
-      <th mat-header-cell *matHeaderCellDef>Comentario</th>
-      <td mat-cell *matCellDef="let element">{{ element.comentario }}</td>
-    </ng-container>
-
-    <!-- Puntuacion -->
-    <ng-container matColumnDef="Puntuacion">
-      <th mat-header-cell *matHeaderCellDef>Puntuación</th>
-      <td mat-cell *matCellDef="let element">{{ element.puntuacion }}</td>
-    </ng-container>
-
-    <!-- ID -->
-    <ng-container matColumnDef="idRuta">
-      <th mat-header-cell *matHeaderCellDef>ID</th>
-      <td mat-cell *matCellDef="let element">{{ element.idRuta }}</td>
-    </ng-container>
-
-
-
-    <!-- Symbol Column -->
-
-        <ng-container matColumnDef="Actualizar">
-
-        <th mat-header-cell *matHeaderCellDef> Actualizar </th>
-
-        <td mat-cell *matCellDef="let element">
-
-         <button matButton [routerLink]="['ediciones', element.idRecomendacion]"
-         >
-         <mat-icon>edit</mat-icon> 
-        </button>
-        </td>
-        </ng-container>
-
-         <ng-container matColumnDef="Eliminar">
-
-        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
-
-        <td mat-cell *matCellDef="let element">
-
-         <button matButton (click)="eliminar(element.idRecomendacion)"
-         >
-         <mat-icon>delete</mat-icon>
-        </button>
-        </td>
-
+      <!-- Position Column -->
+      <ng-container matColumnDef="c1">
+        <th mat-header-cell *matHeaderCellDef> ID</th>
+        <td mat-cell *matCellDef="let element"> {{element. idRecomendacion}} </td>
       </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      <!-- Name Column -->
+      <ng-container matColumnDef="c2">
+        <th mat-header-cell *matHeaderCellDef>Comentario</th>
+        <td mat-cell *matCellDef="let element"> {{element.comentario}} </td>
+      </ng-container>
+
+
+     <!-- Weight Column -->
+      <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef> Puntuación </th>
+        <td mat-cell *matCellDef="let element"> {{element.puntuacion}} </td>
+      </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="c6">
+        <th mat-header-cell *matHeaderCellDef>Nombre de Ruta </th>
+        <td mat-cell *matCellDef="let element"> {{element.ruta.nombreRuta}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c7">
+          <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+            <td mat-cell *matCellDef="let element">
+               <button matButton [routerLink]="['ediciones',element.idRecomendacion]">
+             <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+      </ng-container>
+   
+  <!-- Symbol Column -->
+      <ng-container matColumnDef="c8">
+        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+        <td mat-cell *matCellDef="let element">
+          <button matButton 
+          (click)="eliminar(element.idRecomendacion)">
+          <mat-icon>delete_forever</mat-icon></button>
+        </td>
+      </ng-container>
+
+
+
+          
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
 </div>
-</div>
+
+
