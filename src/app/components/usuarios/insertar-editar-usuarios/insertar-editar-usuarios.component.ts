@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { Usuarios } from '../../../models/usuarios';
 import { UsuariosService } from '../../../services/usuarios.service';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
 
 @Component({
   selector: 'app-insertar-editar-usuarios',
@@ -19,6 +20,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     MatFormFieldModule,
     MatInputModule,
     CommonModule,
+    MatRadioModule,
     MatDatepickerModule,
     MatSelectModule,
     MatButtonModule

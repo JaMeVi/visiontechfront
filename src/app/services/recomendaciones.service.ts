@@ -15,21 +15,35 @@ export class RecomendacionesService {
   private url=`${base_url}/recomendaciones`
   constructor(private http:HttpClient) { }
 
-  list() {
-    return this.http.get<Recomendaciones[]>(this.url);
-  }
-
-  getList() { // para actualizar automático (looks like)
-    return this.listaCambio.asObservable();
-  }
-
-    deleteA(id: number){
-    return this.http.delete(`${this.url}/${id}`)
-  }
-
-    setList(listaNueva: Recomendaciones[]) {
-    this.listaCambio.next(listaNueva);
-  }
+   list() {
+      return this.http.get<Recomendaciones[]>(`${this.url}/lista`);
+    }
+  
+      
+    insert(r: Recomendaciones) {
+        return this.http.post(`${this.url}/inserciones`, r)
+    }
+  
+    getList() { // para actualizar automático (looks like)
+      return this.listaCambio.asObservable();
+    }
+  
+      setList(listaNueva: Recomendaciones[]) {
+        this.listaCambio.next(listaNueva);
+    }
+  
+     listId(id: number) {
+         return this.http.get<Recomendaciones>(`${this.url}/${id}`)
+       }
+     
+           update(r: Recomendaciones) {
+         return this.http.put(this.url, r)
+       }
+       
+           deleteA(id: number){
+           return this.http.delete(`${this.url}/${id}`)
+         }
+       
 
 
 }

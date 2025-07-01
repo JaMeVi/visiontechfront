@@ -25,13 +25,13 @@
 
             <br>
 
-            <mat-form-field class="example-full-width">
-                <mat-label>Habilitado </mat-label>
-                <input matInput placeholder="12" formControlName="enabled">
-                <mat-error *ngIf="form.get('enabled')?.hasError('required')">
-                    El número de calorias es obligatorio!!
-                </mat-error>
-            </mat-form-field>
+            <div>
+        <label>Ruta favorito</label>
+        <mat-radio-group formControlName="enabled" [(ngModel)]="estado">
+          <mat-radio-button [value]="true">Habilitado</mat-radio-button>
+          <mat-radio-button [value]="false">Deshabilitado</mat-radio-button>
+        </mat-radio-group>
+      </div>
             <br>
 
             <mat-form-field class="example-full-width">

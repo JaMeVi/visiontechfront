@@ -1,40 +1,29 @@
 <div class="container">
     <div style="text-align: center;margin: 5%;">
-        <h1>{{ edicion ? 'Actualizar incidencia' : 'Registro de incidente' }}</h1>
+        <h1>{{ edicion ? 'Actualizar recomendacion' : 'Registro de Recomendaciones' }}</h1>
     </div>
     <div  style="text-align: center;margin: 5%;">
         <form [formGroup]="form" (submit)="aceptar()">
-
-          <mat-form-field class="example-full-width">
-                <mat-label>Tipo de incidente </mat-label>
-                <input matInput placeholder="Choque de carros" formControlName="tipoi">
-                <mat-error *ngIf="form.get('tipoi')?.hasError('required')">
-                    El tipo es obligatorio!!
-                </mat-error>
-            </mat-form-field>
-          <br />
             <mat-form-field class="example-full-width">
-                <mat-label>Descripcion de incidente </mat-label>
-                <input matInput placeholder="Choque de carros" formControlName="descripcioni">
-                <mat-error *ngIf="form.get('descripcioni')?.hasError('required')">
-                    La descripcion es obligatorio!!
+                <mat-label>Numero de pasos </mat-label>
+                <input matInput placeholder="bueno" formControlName="comentarior">
+                <mat-error *ngIf="form.get('comentarior')?.hasError('required')">
+                    El comentario es obligatorio!!
                 </mat-error>
             </mat-form-field>
-             <br />
-             
+            <br />
       <mat-form-field>
-        <mat-label>Gravedad</mat-label>
-        <mat-select formControlName="gravedadi">
+        <mat-label>Puntuacion</mat-label>
+        <mat-select formControlName="puntuacionr">
           @for (food of pcTipos; track food) {
           <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
           }
         </mat-select>
         <mat-error *ngIf="form.get('puntuacionr')?.hasError('required')">
-          La gravedad es obligatorio!!
+          La puntuacion es obligatorio!!
         </mat-error>
       </mat-form-field>
             <br>
-
            <mat-form-field>
                 <mat-label>Seleccione la ruta</mat-label>
                 <mat-select formControlName="ruta">

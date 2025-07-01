@@ -4,7 +4,7 @@ import { InsertarEditarCatmosfericasComponent } from './components/catmosfericas
 import { CEmergencia } from './models/contactoemergencia';
 import { Routes } from '@angular/router';
 import { RolesComponent } from './components/roles/roles.component';
-import path from 'path';
+
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RutasComponent } from './components/rutas/rutas.component';
 import { MetricasComponent } from './components/metricas/metricas.component';
@@ -19,6 +19,7 @@ import { InsertarEditarRolesComponent } from './components/roles/insertar-editar
 import { seguridadGuard } from './guard/seguridad.guard';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { InsertarEditarRecomendacionesComponent } from './components/recomendaciones/insertar-editar-recomendaciones/insertar-editar-recomendaciones.component';
 
 export const routes: Routes = [
     { path: '',
@@ -60,7 +61,11 @@ export const routes: Routes = [
             {path:'inserciones',component:InsertarEditarIncidentesComponent},
             {path:'ediciones/:id',component:InsertarEditarIncidentesComponent},],
          canActivate: [seguridadGuard],} ,
-    {path:'recomendaciones',component:RecomendacionesComponent},
+    {path:'recomendaciones',component:RecomendacionesComponent,
+        children:[
+            {path:'inserciones', component:InsertarEditarRecomendacionesComponent},
+            {path:'ediciones/:id',component:InsertarEditarRecomendacionesComponent},],
+            canActivate: [seguridadGuard],},
     {path:'contactoemergencia',component:ContactoEmergenciaComponent},
      {
     path: 'homes',
