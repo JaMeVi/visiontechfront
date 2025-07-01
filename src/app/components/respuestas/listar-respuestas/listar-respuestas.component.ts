@@ -1,26 +1,26 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import { CommonModule } from '@angular/common';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table'
-import { Incidente } from '../../../models/incidentes';
-import { IncidentesService } from '../../../services/incidentes.service';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { Respuesta } from '../../../models/respuestas';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { RespuestasService } from '../../../services/respuestas.service';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterLink } from '@angular/router';
-import { MatFormField, MatLabel } from '@angular/material/form-field';
 
 @Component({
-  selector: 'app-listar-incidentes',
+  selector: 'app-listar-respuestas',
   imports: [MatTableModule,
     CommonModule,
     MatButtonModule, 
-   //RouterLink, // ayda a reconocer el evento de enrutamento del HTML
-    MatIconModule, MatFormField, MatPaginator, MatLabel],
-  templateUrl: './listar-incidentes.component.html',
-  styleUrl: './listar-incidentes.component.css'
+    MatIconModule, MatFormFieldModule, MatPaginator, RouterLink ],
+  templateUrl: './listar-respuestas.component.html',
+  styleUrl: './listar-respuestas.component.css'
 })
-export class ListarIncidentesComponent implements OnInit {
- dataSource: MatTableDataSource<Incidente> = new MatTableDataSource()
+export class ListarRespuestasComponent implements OnInit, AfterViewInit{
+
+  dataSource: MatTableDataSource<Respuesta> = new MatTableDataSource()
 
   displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5','c6']
 
@@ -35,7 +35,7 @@ export class ListarIncidentesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  constructor(private rS: IncidentesService) { }
+  constructor(private rS: RespuestasService) { }
 
   ngOnInit(): void {
     this.rS.list().subscribe(data => {
@@ -58,4 +58,5 @@ export class ListarIncidentesComponent implements OnInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.pcPaginator;
   }
+
 }

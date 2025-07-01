@@ -1,0 +1,49 @@
+<div class="container">
+    <div style="text-align: center;margin: 5%;">
+        <h1>{{ edicion ? 'Actualizar respuesta' : 'Registro de Respuesta' }}</h1>
+    </div>
+    <div  style="text-align: center;margin: 5%;">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Respuesta </mat-label>
+                <input matInput placeholder="bueno" formControlName="comentarior">
+                <mat-error *ngIf="form.get('comentarior')?.hasError('required')">
+                    La respuesta es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br />
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecharespuesta" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fecharespuesta')?.hasError('required')">
+          La fecha es obligatoria!!
+        </mat-error>
+        <mat-error *ngIf="form.get('fecharespuesta')?.hasError('fechaInvalida')">
+          La fecha de transaccion no puede ser mayor a la fecha actual!!
+        </mat-error>
+      </mat-form-field>
+            <br>
+           <mat-form-field>
+                <mat-label>Seleccione el tema</mat-label>
+                <mat-select formControlName="tema">
+                    @for (food of listaRutas; track food) {
+                    <mat-option [value]="food.idTema">{{food.tituloTema}}</mat-option>
+                    }
+                </mat-select>
+                <mat-error *ngIf="form.get('tema')?.hasError('required')">
+                    El tema es obligatoria!!
+                </mat-error>
+           </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" (click)="aceptar()">
+    {{ edicion ? 'Actualizar' : 'Registrar' }}
+  </button>
+            <button mat-raised-button color="warn" (click)="cancelar()">
+    Cancelar
+  </button>
+        </form>
+    </div>
+</div>

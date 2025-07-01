@@ -1,0 +1,70 @@
+<div class="container">
+    <div style="text-align: center;margin: 5%;">
+        <h1>{{ edicion ? 'Actualizar temaforo' : 'Registro de Temaforo' }}</h1>
+    </div>
+    <div  style="text-align: center;margin: 5%;">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Comentario</mat-label>
+                <input matInput placeholder="bueno" formControlName="comentarior">
+                <mat-error *ngIf="form.get('comentarior')?.hasError('required')">
+                    El comentario es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <label>Estado</label>
+    <mat-checkbox 
+      [checked]="form.get('estadocerrado')?.value === true"
+      (change)="form.get('estadocerrado')?.setValue(true)">
+      Activo
+    </mat-checkbox>
+    <mat-checkbox 
+      [checked]="form.get('estadocerrado')?.value === false"
+      (change)="form.get('estadocerrado')?.setValue(false)">
+      Inactivo
+    </mat-checkbox>
+    <br />
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechacreacion" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('fechacreacion')?.hasError('required')">
+          La fecha es obligatoria!!
+        </mat-error>
+        <mat-error *ngIf="form.get('fechacreacion')?.hasError('fechaInvalida')">
+          La fecha de transaccion no puede ser mayor a la fecha actual!!
+        </mat-error>
+      </mat-form-field>
+      <br/>
+
+        <mat-form-field class="example-full-width">
+                <mat-label>Titulo de tema</mat-label>
+                <input matInput placeholder="Conciso" formControlName="titulotema">
+                <mat-error *ngIf="form.get('titulotema')?.hasError('required')">
+                    El titulo del temaforo es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+           <mat-form-field>
+                <mat-label>Seleccione el usuario</mat-label>
+                <mat-select formControlName="usuario">
+                    @for (food of listaRutas; track food) {
+                    <mat-option [value]="food.id">{{food.nombre}}</mat-option>
+                    }
+                </mat-select>
+                <mat-error *ngIf="form.get('usuario')?.hasError('required')">
+                    El nombre es obligatoria!!
+                </mat-error>
+           </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" (click)="aceptar()">
+    {{ edicion ? 'Actualizar' : 'Registrar' }}
+  </button>
+            <button mat-raised-button color="warn" (click)="cancelar()">
+    Cancelar
+  </button>
+        </form>
+    </div>
+</div>

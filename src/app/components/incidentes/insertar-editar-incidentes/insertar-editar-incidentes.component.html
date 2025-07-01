@@ -1,38 +1,34 @@
 <div class="container">
     <div style="text-align: center;margin: 5%;">
-        <h1>Registro de Incidentes</h1>
+        <h1>{{ edicion ? 'Actualizar incidencia' : 'Registro de incidente' }}</h1>
     </div>
     <div  style="text-align: center;margin: 5%;">
         <form [formGroup]="form" (submit)="aceptar()">
             <mat-form-field class="example-full-width">
-                <mat-label>Descripcion </mat-label>
-                <input matInput placeholder="Describe" formControlName="descripcioni">
+                <mat-label>Descripcion de incidente </mat-label>
+                <input matInput placeholder="Choque de carros" formControlName="descripcioni">
                 <mat-error *ngIf="form.get('descripcioni')?.hasError('required')">
                     La descripcion es obligatorio!!
                 </mat-error>
             </mat-form-field>
-            <br>
-            <mat-form-field class="example-full-width">
-                <mat-label>Gravedad </mat-label>
-                <input matInput placeholder="Alta-Media-Baja" formControlName="gravedadi">
-                <mat-error *ngIf="form.get('gravedadi')?.hasError('required')">
-                La gravedad es obligatorio!!
-                </mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field class="example-full-width">
-                <mat-label>Tipo </mat-label>
-                <input matInput placeholder="Transito?" formControlName="tipoi">
-                <mat-error *ngIf="form.get('tipoi')?.hasError('required')">
-                    El tipo de la incidencia es obligatorio!!
-                </mat-error>
-            </mat-form-field>
+             <br />
+      <mat-form-field>
+        <mat-label>Gravedad</mat-label>
+        <mat-select formControlName="gravedadi">
+          @for (food of pcTipos; track food) {
+          <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+          }
+        </mat-select>
+        <mat-error *ngIf="form.get('puntuacionr')?.hasError('required')">
+          La gravedad es obligatorio!!
+        </mat-error>
+      </mat-form-field>
             <br>
            <mat-form-field>
                 <mat-label>Seleccione la ruta</mat-label>
                 <mat-select formControlName="ruta">
                     @for (food of listaRutas; track food) {
-                    <mat-option [value]="food.idRuta">{{food.idRuta}}</mat-option>
+                    <mat-option [value]="food.idRuta">{{food.nombreRuta}}</mat-option>
                     }
                 </mat-select>
                 <mat-error *ngIf="form.get('ruta')?.hasError('required')">
@@ -40,8 +36,12 @@
                 </mat-error>
            </mat-form-field>
             <br>
-            <button matButton="elevated">Registrar</button>
+            <button mat-raised-button color="primary" (click)="aceptar()">
+    {{ edicion ? 'Actualizar' : 'Registrar' }}
+  </button>
+            <button mat-raised-button color="warn" (click)="cancelar()">
+    Cancelar
+  </button>
         </form>
     </div>
 </div>
-
