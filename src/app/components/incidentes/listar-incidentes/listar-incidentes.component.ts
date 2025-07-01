@@ -13,8 +13,7 @@ import { MatFormField, MatLabel } from '@angular/material/form-field';
   selector: 'app-listar-incidentes',
   imports: [MatTableModule,
     CommonModule,
-    MatButtonModule, 
-   //RouterLink, // ayda a reconocer el evento de enrutamento del HTML
+    MatButtonModule, RouterLink, // ayda a reconocer el evento de enrutamento del HTML
     MatIconModule, MatFormField, MatPaginator, MatLabel],
   templateUrl: './listar-incidentes.component.html',
   styleUrl: './listar-incidentes.component.css'
@@ -22,7 +21,7 @@ import { MatFormField, MatLabel } from '@angular/material/form-field';
 export class ListarIncidentesComponent implements OnInit {
  dataSource: MatTableDataSource<Incidente> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5','c6']
+  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5','c6','c7']
 
   pcCantidadRegistros: number = 0;
 
