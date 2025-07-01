@@ -15,6 +15,11 @@ import { InsertarEditarMetricasComponent } from './components/metricas/insertar-
 import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
 import { Component } from '@angular/core';
 import { InsertarEditarRecomendacionesComponent } from './components/recomendaciones/insertar-editar-recomendaciones/insertar-editar-recomendaciones.component';
+import { combineLatest } from 'rxjs';
+import { TemasforoComponent } from './components/temasforo/temasforo.component';
+import { InsertarEditarTemasforoComponent } from './components/temasforo/insertar-editar-temasforo/insertar-editar-temasforo.component';
+import { RespuestasComponent } from './components/respuestas/respuestas.component';
+import { InsertarEditarRespuestasComponent } from './components/respuestas/insertar-editar-respuestas/insertar-editar-respuestas.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'roles', pathMatch:'full'},
@@ -44,6 +49,28 @@ export const routes: Routes = [
             {
                 path:'ediciones/id',component:InsertarEditarRecomendacionesComponent
             },
+        ]
+    },
+    {
+        path:'temaforo',component:TemasforoComponent,
+        children:[
+            {
+                path:'inserciones',component:InsertarEditarTemasforoComponent
+            },
+            {
+                path:'ediciones/id',component:InsertarEditarTemasforoComponent
+            }
+        ]
+    },
+    {
+        path:'respuesta',component:RespuestasComponent,
+        children:[
+            {
+                path:'inserciones',component:InsertarEditarRespuestasComponent
+            },
+            {
+                path:'ediciones/id',component:InsertarEditarRespuestasComponent
+            }
         ]
     },
     {path:'contactoemergencia',component:ContactoEmergenciaComponent}  
