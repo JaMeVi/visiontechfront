@@ -15,10 +15,13 @@ import { ContactoEmergenciaComponent } from './components/contacto-emergencia/co
 import { InsertarEditarMetricasComponent } from './components/metricas/insertar-editar-metricas/insertar-editar-metricas.component';
 import { AgregarActualizarRutasComponent } from './components/rutas/agregar-actualizar-rutas/agregar-actualizar-rutas.component';
 import { Component } from '@angular/core';
+import { InsertarEditarRolesComponent } from './components/roles/insertar-editar-roles/insertar-editar-roles.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'roles', pathMatch:'full'},
-    {path:'roles',component:RolesComponent},
+    {path:'roles',component:RolesComponent, children:[
+            {path:'inserciones',component:InsertarEditarRolesComponent},
+            {path:'ediciones/:id',component:InsertarEditarRolesComponent},]},
     {path:'usuarios',component:UsuariosComponent,
          children:[
             {path:'inserciones',component:InsertarEditarUsuariosComponent},

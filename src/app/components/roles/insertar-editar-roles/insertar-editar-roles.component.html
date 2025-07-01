@@ -1,0 +1,31 @@
+<div class="container">
+    <div style="text-align: center;margin: 5%;">
+        <h1>Registro de Roles</h1>
+    </div>
+    <div  style="text-align: center;margin: 5%;">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre rol </mat-label>
+                <input matInput placeholder="12" formControlName="rol">
+                <mat-error *ngIf="form.get('rol')?.hasError('required')">
+                    El número de pasos es obligatorio!!
+                </mat-error>
+            </mat-form-field>
+            <br>
+                        
+           <mat-form-field>
+                <mat-label>Seleccione el usuario</mat-label>
+                <mat-select formControlName="user">
+                    @for (food of  listaUsuarios; track food) {
+                    <mat-option [value]="food.idUsuario">{{food.username}}</mat-option>
+                    }
+                </mat-select>
+                <mat-error *ngIf="form.get('user')?.hasError('required')">
+                    La ruta es obligatoria!!
+                </mat-error>
+           </mat-form-field>
+            <br>
+            <button matButton="elevated">Registrar</button>
+        </form>
+    </div>
+</div>

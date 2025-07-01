@@ -8,7 +8,7 @@
       <!-- Position Column -->
       <ng-container matColumnDef="c1">
         <th mat-header-cell *matHeaderCellDef> ID</th>
-        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.idRol}} </td>
       </ng-container>
 
       <!-- Name Column -->
@@ -17,13 +17,28 @@
         <td mat-cell *matCellDef="let element"> {{element.rol}} </td>
       </ng-container>
 
+      <!-- Symbol Column -->
+        <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef>Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.user.username}} </td>
+      </ng-container>
+         
+        <!-- Symbol Column -->
+      <ng-container matColumnDef="c4">
+          <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+            <td mat-cell *matCellDef="let element">
+               <button matButton [routerLink]="['ediciones',element.idRol]">
+             <mat-icon>edit</mat-icon>
+            </button>
+          </td>
+      </ng-container>
 
   <!-- Symbol Column -->
-      <ng-container matColumnDef="c3">
+      <ng-container matColumnDef="c5">
         <th mat-header-cell *matHeaderCellDef> Eliminar </th>
         <td mat-cell *matCellDef="let element">
           <button matButton 
-          (click)="eliminar(element.idApp)">
+          (click)="eliminar(element.idUsuario)">
           <mat-icon>delete_forever</mat-icon></button>
         </td>
       </ng-container>

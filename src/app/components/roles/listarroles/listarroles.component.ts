@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { Roles } from '../../../models/roles';
 import { RolesService } from '../../../services/roles.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listarroles',
   imports: [ MatTableModule,
     CommonModule,
     MatButtonModule, 
-   // RouterLink, // ayda a reconocer el evento de enrutamento del HTML
+    RouterLink, // ayda a reconocer el evento de enrutamento del HTML
     MatIconModule],
   templateUrl: './listarroles.component.html',
   styleUrl: './listarroles.component.css'
@@ -19,7 +20,7 @@ import { RolesService } from '../../../services/roles.service';
 export class ListarrolesComponent implements OnInit{
   dataSource: MatTableDataSource<Roles> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['c1', 'c2','c3']
+  displayedColumns: string[] = ['c1', 'c2','c3','c4','c5']
 
   constructor(private rS: RolesService) { }
 
