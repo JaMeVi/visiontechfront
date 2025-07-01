@@ -1,4 +1,10 @@
-<mat-toolbar class="custom-toolbar">
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()">
+     <div>
+    <button mat-button [routerLink]="['/homes']" style="color: white">
+      <mat-icon>home</mat-icon>Home
+    </button>
+  </div> 
+ 
   <div>
     <button mat-button [matMenuTriggerFor]="menuRoles" class="btn-rojo">
       <mat-icon>apps</mat-icon>
@@ -21,7 +27,7 @@
   </div>
 
      <div>
-    <button mat-button [matMenuTriggerFor]="menuMetricas" class="btn-rojo">
+    <button mat-button [matMenuTriggerFor]="menuMetricas" class="btn-rojo" >
       <mat-icon>book</mat-icon>
       Metricas
     </button>
@@ -54,6 +60,13 @@
       Contactos de emergencia
     </button>
   </div>
+
+<span class="toolbar-spacer"></span>
+<div class="right-menu">
+    <button mat-button [matMenuTriggerFor]="menuSalir" >
+      <mat-icon>person</mat-icon>Usuario
+    </button>
+ </div>
 
 </mat-toolbar>
 <mat-menu #menuRoles="matMenu">
@@ -92,4 +105,16 @@
 
 <mat-menu #menuCemergencia="matMenu">
   <button mat-menu-item routerLink="/contactoemergencia">Listar</button>
+</mat-menu>
+
+
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+  <button mat-menu-item>
+    Rol:
+    <span>{{ rol }}</span>
+  </button>
 </mat-menu>
