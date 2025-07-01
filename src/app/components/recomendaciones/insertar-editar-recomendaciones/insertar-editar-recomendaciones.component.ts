@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router} from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -16,7 +16,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-insertar-editar-recomendaciones',
-  standalone:true,
   providers: [provideNativeDateAdapter()],
   imports: [
     ReactiveFormsModule,

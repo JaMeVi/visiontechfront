@@ -1,0 +1,105 @@
+/* Estilos generales */
+:root {
+  --primary-color: #00b4d8;       /* Celeste principal */
+  --secondary-color: #90e0ef;     /* Celeste claro */
+  --dark-blue: #0077b6;           /* Azul oscuro para contrastes */
+  --light-water: #caf0f8;         /* Agua muy clara */
+  --white: #ffffff;
+  --text-dark: #333333;
+}
+
+/* Toolbar principal */
+.custom-toolbar {
+  background: linear-gradient(135deg, var(--primary-color), var(--dark-blue));
+  color: var(--white);
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Título Vision Tech */
+.custom-toolbar::before {
+  content: "VISION TECH";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones del toolbar */
+.custom-toolbar button {
+  color: var(--white);
+  font-weight: 500;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-toolbar button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.custom-toolbar mat-icon {
+  margin-right: 8px;
+  color: var(--light-water);
+}
+
+/* Menús desplegables */
+.mat-menu-panel {
+  background-color: var(--light-water);
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 116, 182, 0.2);
+}
+
+.mat-menu-item {
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.mat-menu-item:hover {
+  background-color: var(--secondary-color) !important;
+  color: var(--white);
+}
+
+.mat-menu-item mat-icon {
+  color: var(--primary-color);
+  margin-right: 12px;
+}
+
+/* Efecto hover para items del menú */
+.mat-menu-item:hover mat-icon {
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+/* Separación entre botones */
+.custom-toolbar > div {
+  margin: 0 5px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 1200px) {
+  .custom-toolbar {
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
+  .custom-toolbar::before {
+    position: relative;
+    left: auto;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .custom-toolbar > div {
+    margin: 5px;
+  }
+}

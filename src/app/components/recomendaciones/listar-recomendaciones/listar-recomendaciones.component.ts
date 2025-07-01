@@ -21,7 +21,7 @@ import { RouterLink } from '@angular/router';
 export class ListarRecomendacionesComponent implements OnInit, AfterViewInit {
 dataSource: MatTableDataSource<Recomendaciones> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['c1', 'c2','c3', 'c4']
+  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5','c6']
 
   pcCantidadRegistros: number = 0;
 

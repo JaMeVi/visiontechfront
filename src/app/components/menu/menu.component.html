@@ -1,122 +1,138 @@
 <mat-toolbar class="custom-toolbar">
   <div>
     <button mat-button [matMenuTriggerFor]="menuRoles" class="btn-rojo">
-      <mat-icon>apps</mat-icon>
-     Roles
+      <mat-icon>admin_panel_settings</mat-icon> Roles
     </button>
   </div>
  
   <div>
     <button mat-button [matMenuTriggerFor]="menuUsuarios" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Usuarios
+      <mat-icon>people</mat-icon> Usuarios
     </button>
   </div>
 
-   <div>
+  <div>
     <button mat-button [matMenuTriggerFor]="menuRutas" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Rutas
+      <mat-icon>map</mat-icon> Rutas
     </button>
   </div>
 
-     <div>
+  <div>
     <button mat-button [matMenuTriggerFor]="menuMetricas" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Metricas
+      <mat-icon>analytics</mat-icon> Metricas
     </button>
   </div>
 
   <div>
     <button mat-button [matMenuTriggerFor]="menuCatmosferica" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Condiciones Atmosfericas
+      <mat-icon>cloud</mat-icon> Condiciones Atmosfericas
     </button>
   </div>
 
-    <div>
+  <div>
     <button mat-button [matMenuTriggerFor]="menuIncidentes" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Incidentes
+      <mat-icon>warning</mat-icon> Incidentes
     </button>
   </div>
 
-    <div>
+  <div>
     <button mat-button [matMenuTriggerFor]="menuRecomendaciones" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Recomendaciones
+      <mat-icon>lightbulb</mat-icon> Recomendaciones
     </button>
   </div>
 
   <div>
     <button mat-button [matMenuTriggerFor]="menuCemergencia" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Contactos de emergencia
+      <mat-icon>emergency</mat-icon> Contactos de emergencia
     </button>
   </div>
 
   <div>
     <button mat-button [matMenuTriggerFor]="menuTemasforo" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Temasforo
+      <mat-icon>forum</mat-icon> Temasforo
     </button>
   </div>
 
   <div>
     <button mat-button [matMenuTriggerFor]="menuRespuestas" class="btn-rojo">
-      <mat-icon>book</mat-icon>
-      Respuestas 
+      <mat-icon>question_answer</mat-icon> Respuestas
     </button>
   </div>
-
 </mat-toolbar>
 <mat-menu #menuRoles="matMenu">
-  <button mat-menu-item routerLink="/roles">Listar</button>
-  <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/roles/busquedas">Buscar por tipo</button>
+  <button mat-menu-item routerLink="/roles">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/roles/nuevo">
+    <mat-icon>person_add</mat-icon> Registrar
+  </button>
+  <button mat-menu-item routerLink="/roles/busquedas">
+    <mat-icon>search</mat-icon> Buscar por tipo
+  </button>
 </mat-menu>
-
 <mat-menu #menuUsuarios="matMenu">
-  <button mat-menu-item routerLink="/usuarios">Listar</button>
+  <button mat-menu-item routerLink="/usuarios">
+    <mat-icon>list</mat-icon> Listar
+  </button>
 </mat-menu>
-
 <mat-menu #menuRutas="matMenu">
-  <button mat-menu-item routerLink="/rutas">Listar</button>
-   <button mat-menu-item routerLink="/rutas/inserciones">Registrar</button>
+  <button mat-menu-item routerLink="/rutas">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/rutas/inserciones">
+    <mat-icon>add_location</mat-icon> Registrar
+  </button>
 </mat-menu>
-
 <mat-menu #menuMetricas="matMenu">
-  <button mat-menu-item routerLink="/metricas">Listar</button>
-  <button mat-menu-item routerLink="/metricas/inserciones">Registrar</button>
+  <button mat-menu-item routerLink="/metricas">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/metricas/inserciones">
+    <mat-icon>add_chart</mat-icon> Registrar
+  </button>
 </mat-menu>
-
 <mat-menu #menuCatmosferica="matMenu">
-  <button mat-menu-item routerLink="/catmosferica">Listar</button>
-   <button mat-menu-item routerLink="/catmosferica/inserciones">Registrar</button>
+  <button mat-menu-item routerLink="/catmosferica">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/catmosferica/inserciones">
+    <mat-icon>device_thermostat</mat-icon> Registrar
+  </button>
 </mat-menu>
-
 <mat-menu #menuRecomendaciones="matMenu">
-  <button mat-menu-item routerLink="/recomendaciones">Listar</button>
-  <button mat-menu-item routerLink="/recomendaciones/inserciones">Listar</button>
+  <button mat-menu-item routerLink="/recomendaciones">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/recomendaciones/inserciones">
+    <mat-icon>add_comment</mat-icon> Listar
+  </button>
 </mat-menu>
-
 <mat-menu #menuIncidentes="matMenu">
-  <button mat-menu-item routerLink="/incidentes">Listar</button>
-  <button mat-menu-item routerLink="/incidentes/inserciones">Listar</button>
+  <button mat-menu-item routerLink="/incidentes">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/incidentes/inserciones">
+    <mat-icon>report_problem</mat-icon> Listar
+  </button>
 </mat-menu>
-
 <mat-menu #menuTemasforo="matMenu">
-  <button mat-menu-item routerLink="/temaforo">Listar</button>
-  <button mat-menu-item routerLink="/temaforo/inserciones">Listar</button>
+  <button mat-menu-item routerLink="/temaforo">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/temaforo/inserciones">
+    <mat-icon>post_add</mat-icon> Listar
+  </button>
 </mat-menu>
-
-
 <mat-menu #menuRespuestas="matMenu">
-  <button mat-menu-item routerLink="/respuesta">Listar</button>
-  <button mat-menu-item routerLink="/respuesta/inserciones">Listar</button>
+  <button mat-menu-item routerLink="/respuesta">
+    <mat-icon>list</mat-icon> Listar
+  </button>
+  <button mat-menu-item routerLink="/respuesta/inserciones">
+    <mat-icon>reply</mat-icon> Listar
+  </button>
 </mat-menu>
-
-
 <mat-menu #menuCemergencia="matMenu">
-  <button mat-menu-item routerLink="/contactoemergencia">Listar</button>
+  <button mat-menu-item routerLink="/contactoemergencia">
+    <mat-icon>list</mat-icon> Listar
+  </button>
 </mat-menu>

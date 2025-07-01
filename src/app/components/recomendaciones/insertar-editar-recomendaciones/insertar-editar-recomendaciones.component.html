@@ -11,7 +11,7 @@
                     El comentario es obligatorio!!
                 </mat-error>
             </mat-form-field>
-             <br />
+            <br />
       <mat-form-field>
         <mat-label>Puntuacion</mat-label>
         <mat-select formControlName="puntuacionr">
@@ -19,7 +19,7 @@
           <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
           }
         </mat-select>
-        <mat-error *ngIf="pcForm.get('puntuacionr')?.hasError('required')">
+        <mat-error *ngIf="form.get('puntuacionr')?.hasError('required')">
           La puntuacion es obligatorio!!
         </mat-error>
       </mat-form-field>
