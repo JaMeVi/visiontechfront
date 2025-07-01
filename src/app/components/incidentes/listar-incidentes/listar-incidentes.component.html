@@ -1,7 +1,18 @@
 <div class="container">
   <div style="text-align: center;margin: 5%;">
     <h1>Lista de Incidentes</h1>
+    <p>Cantidad de transacciones: {{pcCantidadRegistros}}</p>
   </div>
+   <mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+</mat-form-field>
+<mat-paginator
+    [pageSizeOptions]="pcPageSizeOptions"
+    [pageSize]="10"
+    showFirstLastButtons
+    aria-label="Select page">
+</mat-paginator>
   <div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
@@ -30,16 +41,31 @@
         <th mat-header-cell *matHeaderCellDef>Descripcion </th>
         <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
       </ng-container>
+
+      <!-- Symbol Column -->
+        <ng-container matColumnDef="c5">
+        <th mat-header-cell *matHeaderCellDef>Nombre de Ruta </th>
+        <td mat-cell *matCellDef="let element"> {{element.ruta.nombreRuta}} </td>
+      </ng-container>
       
       
   <!-- Symbol Column -->
-      <ng-container matColumnDef="c5">
+      <ng-container matColumnDef="c6">
         <th mat-header-cell *matHeaderCellDef> Eliminar </th>
         <td mat-cell *matCellDef="let element">
           <button matButton 
-          (click)="eliminar(element.idApp)">
+          (click)="eliminar(element.idIncidente)">
           <mat-icon>delete_forever</mat-icon></button>
         </td>
+      </ng-container>
+
+       <ng-container matColumnDef="c7">
+          <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+            <td mat-cell *matCellDef="let element">
+               <button matButton [routerLink]="['ediciones',element.idIncidente]">
+             <mat-icon>edit</mat-icon>
+            </button>
+          </td>
       </ng-container>
           
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

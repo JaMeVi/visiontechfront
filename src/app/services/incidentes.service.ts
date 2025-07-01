@@ -11,25 +11,38 @@ const base_url=environment.base
 })
 export class IncidentesService {
 
-  private listaCambio = new Subject<Incidente[]>();
-    private url=`${base_url}/incidentes`
-    constructor(private http:HttpClient) { }
+  private url=`${base_url}/incidentes`;
+   private listaCambio = new Subject<Incidente[]>();
   
-    list() {
-      return this.http.get<Incidente[]>(this.url);
-    }
-  
-    getList() { // para actualizar automático (looks like)
-      return this.listaCambio.asObservable();
-    }
-  
-      deleteA(id: number){
-      return this.http.delete(`${this.url}/${id}`)
-    }
-  
-      setList(listaNueva: Incidente[]) {
-      this.listaCambio.next(listaNueva);
-    }
+   constructor(private http:HttpClient) { }
+   
+     list() {
+       return this.http.get<Incidente[]>(`${this.url}/lista`);
+     }
+   
+     insert(i: Incidente) {
+       return this.http.post(`${this.url}/inserciones`, i)
+     }
+   
+     getList() { // para actualizar automático (looks like)
+       return this.listaCambio.asObservable();
+     }
+ 
+        setList(listaNueva: Incidente[]) {
+       this.listaCambio.next(listaNueva);
+     }
+ 
+   listId(id: number) {
+     return this.http.get<Incidente>(`${this.url}/${id}`)
+   }
+ 
+       update(i: Incidente) {
+     return this.http.put(this.url, i)
+   }
+   
+       deleteA(id: number){
+       return this.http.delete(`${this.url}/${id}`)
+     }
   
   
   }
