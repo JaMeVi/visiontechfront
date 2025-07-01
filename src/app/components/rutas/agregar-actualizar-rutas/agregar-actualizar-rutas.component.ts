@@ -14,6 +14,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { RutasService } from '../../../services/rutas.service';
 import { Usuarios } from '../../../models/usuarios';
 
+
 @Component({
   selector: 'app-agregar-actualizar-rutas',
   providers: [provideNativeDateAdapter()],
@@ -85,7 +86,7 @@ export class AgregarActualizarRutasComponent  implements OnInit{
        this.ver.tiempoRuta = this.form.value.tiempo;
        this.ver.longitud = this.form.value.longitud;
        this.ver.latitud = this.form.value.latitud;
-       this.ver.usuario.id = this.form.value.usuario;
+       this.ver.usuario.idUsuario = this.form.value.usuario;
   
        if (this.edicion){
    //actualziar
@@ -119,7 +120,7 @@ export class AgregarActualizarRutasComponent  implements OnInit{
            tiempo: new FormControl(data.tiempoRuta),
            longitud: new FormControl(data.longitud),
            latitud: new FormControl(data.latitud),
-           usuario: new FormControl(data.usuario.id),
+           usuario: new FormControl(data.usuario.idUsuario),
           
          })
        })

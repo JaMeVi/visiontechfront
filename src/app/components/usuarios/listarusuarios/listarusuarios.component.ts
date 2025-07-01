@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table'
 import { UsuariosService } from '../../../services/usuarios.service';
 import { Usuarios } from '../../../models/usuarios';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-listarusuarios',
   imports: [MatTableModule,
     CommonModule,
     MatButtonModule, 
-   // RouterLink, // ayda a reconocer el evento de enrutamento del HTML
+   RouterLink, // ayda a reconocer el evento de enrutamento del HTML
     MatIconModule],
   templateUrl: './listarusuarios.component.html',
   styleUrl: './listarusuarios.component.css'
@@ -20,7 +21,7 @@ export class ListarusuariosComponent  implements OnInit {
   
   dataSource: MatTableDataSource<Usuarios> = new MatTableDataSource()
 
-  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5', 'c6','c7']
+  displayedColumns: string[] = ['c1', 'c2','c3', 'c4','c5', 'c6','c7','c8']
 
   constructor(private uS: UsuariosService) { }
 

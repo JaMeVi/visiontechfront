@@ -1,3 +1,4 @@
+import { InsertarEditarUsuariosComponent } from './components/usuarios/insertar-editar-usuarios/insertar-editar-usuarios.component';
 import { InsertarEditarIncidentesComponent } from './components/incidentes/insertar-editar-incidentes/insertar-editar-incidentes.component';
 import { InsertarEditarCatmosfericasComponent } from './components/catmosfericas/insertar-editar-catmosfericas/insertar-editar-catmosfericas.component';
 import { CEmergencia } from './models/contactoemergencia';
@@ -18,7 +19,10 @@ import { Component } from '@angular/core';
 export const routes: Routes = [
     {path:'',redirectTo:'roles', pathMatch:'full'},
     {path:'roles',component:RolesComponent},
-    {path:'usuarios',component:UsuariosComponent},
+    {path:'usuarios',component:UsuariosComponent,
+         children:[
+            {path:'inserciones',component:InsertarEditarUsuariosComponent},
+            {path:'ediciones/:id',component:InsertarEditarUsuariosComponent},]},
     {path:'rutas',component:RutasComponent,
         children:[
             {path:'inserciones',component:AgregarActualizarRutasComponent},

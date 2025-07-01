@@ -74,7 +74,7 @@
                 <mat-label>Seleccione el usuarios </mat-label>
                 <mat-select formControlName="usuario">
                     @for (food of listaUsuarios; track food) {
-                    <mat-option [value]="food.id">{{food.nombre}}</mat-option>
+                    <mat-option [value]="food.idUsuario">{{food.nombre}}</mat-option>
                     }
                 </mat-select>
                 <mat-error *ngIf="form.get('usuario')?.hasError('required')">
