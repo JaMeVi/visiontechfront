@@ -2,7 +2,7 @@
     <div style="text-align: center;margin: 5%;">
         <h1>{{ edicion ? 'Actualizar recomendacion' : 'Registro de Recomendaciones' }}</h1>
     </div>
-    <div  style="text-align: center;margin: 5%;">
+    <div  class="form-container" style="text-align: center;margin: 5%;">
         <form [formGroup]="form" (submit)="aceptar()">
             <mat-form-field class="example-full-width">
                 <mat-label>Numero de pasos </mat-label>
