@@ -1,0 +1,32 @@
+<div class="formulario">
+  <form [formGroup]="form" (ngSubmit)="guardarRuta()">
+    <label>Nombre Ruta:</label>
+    <input type="text" formControlName="nombreRuta" />
+
+    <label>Inicio:</label>
+    <input type="text" formControlName="inicio" />
+
+    <label>Destino:</label>
+    <input type="text" formControlName="destino" />
+
+    <label>Distancia (m):</label>
+    <input type="number" formControlName="distanciaMetros" />
+
+    <label>Tiempo (min):</label>
+    <input type="number" formControlName="tiempoRuta" />
+
+    <button type="submit" [disabled]="!form.valid">Registrar Ruta</button>
+  </form>
+</div>
+
+<div class="mapa">
+  <google-map
+    height="400px"
+    width="100%"
+    [center]="center"
+    [zoom]="zoom"
+    (mapClick)="actualizarPosicion($event)"
+  >
+    <map-marker [position]="markerPosition" [options]="{draggable: true}"></map-marker>
+  </google-map>
+</div>
