@@ -11,7 +11,6 @@ import { Respuesta } from '../../../models/respuestas';
 import { Temaforo } from '../../../models/temasforo';
 import { RespuestasService } from '../../../services/respuestas.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { RutasService } from '../../../services/rutas.service';
 import { TemasforoService } from '../../../services/temasforo.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -25,7 +24,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     CommonModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   templateUrl: './insertar-editar-respuestas.component.html',
   styleUrl: './insertar-editar-respuestas.component.css'

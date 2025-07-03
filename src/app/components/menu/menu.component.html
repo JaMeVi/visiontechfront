@@ -51,7 +51,7 @@
       </div>
 
       <!-- Usuarios (solo para TESTER) -->
-      <div class="menu-section" *ngIf="isTester()">
+      <div class="menu-section" >
         <button mat-button class="menu-item expandable" (click)="toggleSubmenu('usuarios')">
           <mat-icon>people</mat-icon>
           <span>Usuarios</span>
@@ -65,7 +65,7 @@
 
 
       <!-- Rutas (solo para TESTER) -->
-      <div class="menu-section" *ngIf="isTester()">
+      <div class="menu-section" >
         <button mat-button class="menu-item expandable" (click)="toggleSubmenu('rutas')">
           <mat-icon>route</mat-icon>
           <span>Rutas</span>

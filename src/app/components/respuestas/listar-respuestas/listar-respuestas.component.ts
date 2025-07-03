@@ -8,13 +8,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { RouterLink } from '@angular/router';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-listar-respuestas',
   imports: [MatTableModule,
     CommonModule,
     MatButtonModule, 
-    MatIconModule, MatFormFieldModule, MatPaginator, RouterLink ],
+    MatIconModule, 
+    MatFormFieldModule, 
+    MatPaginator, 
+    RouterLink,
+    MatInputModule,
+  ],
   templateUrl: './listar-respuestas.component.html',
   styleUrl: './listar-respuestas.component.css'
 })

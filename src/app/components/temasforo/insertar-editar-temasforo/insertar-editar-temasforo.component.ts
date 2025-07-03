@@ -23,9 +23,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatFormFieldModule,
     MatInputModule,
     CommonModule,
-    MatDatepickerModule,
+    MatDatepickerModule,    
     MatSelectModule,
-    MatButtonModule, MatCheckboxModule
+    MatButtonModule, 
+    MatCheckboxModule
   ],
   templateUrl: './insertar-editar-temasforo.component.html',
   styleUrl: './insertar-editar-temasforo.component.css'
