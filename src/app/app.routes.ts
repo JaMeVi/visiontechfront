@@ -4,6 +4,7 @@ import { InsertarEditarCatmosfericasComponent } from './components/catmosfericas
 import { CEmergencia } from './models/contactoemergencia';
 import { Routes } from '@angular/router';
 import { RolesComponent } from './components/roles/roles.component';
+import { CrearRutaDesdeMapaComponent } from './components/rutas/crear-ruta-desde-mapa/crear-ruta-desde-mapa.component';
 
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { RutasComponent } from './components/rutas/rutas.component';
@@ -20,6 +21,11 @@ import { seguridadGuard } from './guard/seguridad.guard';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { InsertarEditarRecomendacionesComponent } from './components/recomendaciones/insertar-editar-recomendaciones/insertar-editar-recomendaciones.component';
+import { MapaDireccionComponent } from './components/mapa-direccion/mapa-direccion.component';
+import { RespuestasComponent } from './components/respuestas/respuestas.component';
+import { InsertarEditarRespuestasComponent } from './components/respuestas/insertar-editar-respuestas/insertar-editar-respuestas.component';
+import { TemasforoComponent } from './components/temasforo/temasforo.component';
+import { InsertarEditarTemasforoComponent } from './components/temasforo/insertar-editar-temasforo/insertar-editar-temasforo.component';
 
 export const routes: Routes = [
     { path: '',
@@ -28,6 +34,12 @@ export const routes: Routes = [
      {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path:'mapa', component:MapaDireccionComponent
+  },
+  {
+    path:'creardesdemapa',component:CrearRutaDesdeMapaComponent
   },
    {
         path:'',redirectTo:'usuarios',pathMatch:'full'
@@ -44,7 +56,8 @@ export const routes: Routes = [
     {path:'rutas',component:RutasComponent,
         children:[
             {path:'inserciones',component:AgregarActualizarRutasComponent},
-            {path:'ediciones/:id',component:AgregarActualizarRutasComponent},],
+            {path:'ediciones/:id',component:AgregarActualizarRutasComponent},{ path: 'mapa', component: MapaDireccionComponent },
+{ path: 'creardesdemapa', component: CrearRutaDesdeMapaComponent }],
          canActivate: [seguridadGuard],},
     {path:'metricas',component:MetricasComponent,  
         children:[
@@ -67,7 +80,24 @@ export const routes: Routes = [
             {path:'ediciones/:id',component:InsertarEditarRecomendacionesComponent},],
             canActivate: [seguridadGuard],},
     {path:'contactoemergencia',component:ContactoEmergenciaComponent},
-     {
+    {path:'respuesta',component:RespuestasComponent,
+        children:[
+            {
+                path:'inserciones',component:InsertarEditarRespuestasComponent
+            },
+            {
+                path:'ediciones/:id',component:InsertarEditarRespuestasComponent
+            }
+        ]
+        , canActivate: [seguridadGuard],
+    },{
+        path:'temaforo',component:TemasforoComponent,children:[{
+            path:'inserciones', component:InsertarEditarTemasforoComponent,
+        },{
+            path:'ediciones/:id',component:InsertarEditarTemasforoComponent
+
+        }], canActivate:[seguridadGuard],
+    },{
     path: 'homes',
     component: HomeComponent,
         canActivate: [seguridadGuard],
