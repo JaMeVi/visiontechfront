@@ -90,27 +90,27 @@
 
 <!-- Temas del Foro -->
 <div class="menu-section">
-  <button mat-button class="menu-item expandable" (click)="toggleSubmenu('temasforo')">
+  <button mat-button class="menu-item expandable" (click)="toggleSubmenu('temaforo')">
     <mat-icon>forum</mat-icon>
     <span>Temas Foro</span>
-    <mat-icon class="expand-icon" [class.rotated]="openSubmenus['temasforo']">expand_more</mat-icon>
+    <mat-icon class="expand-icon" [class.rotated]="openSubmenus['temaforo']">expand_more</mat-icon>
   </button>
-  <div class="submenu" [class.open]="openSubmenus['temasforo']">
-    <a mat-button routerLink="/temasforo" class="submenu-item" (click)="closeMenu()">Listar</a>
-    <a mat-button routerLink="/temasforo/inserciones" class="submenu-item" (click)="closeMenu()">Registrar</a>
+  <div class="submenu" [class.open]="openSubmenus['temaforo']">
+    <a mat-button routerLink="/temaforo" class="submenu-item" (click)="closeMenu()">Listar</a>
+    <a mat-button routerLink="/temaforo/inserciones" class="submenu-item" (click)="closeMenu()">Registrar</a>
   </div>
 </div>
 
 <!-- Respuestas del Foro -->
 <div class="menu-section">
-  <button mat-button class="menu-item expandable" (click)="toggleSubmenu('respuestas')">
+  <button mat-button class="menu-item expandable" (click)="toggleSubmenu('respuesta')">
     <mat-icon>question_answer</mat-icon>
     <span>Respuestas</span>
-    <mat-icon class="expand-icon" [class.rotated]="openSubmenus['respuestas']">expand_more</mat-icon>
+    <mat-icon class="expand-icon" [class.rotated]="openSubmenus['respuesta']">expand_more</mat-icon>
   </button>
   <div class="submenu" [class.open]="openSubmenus['respuesta']">
-    <a mat-button routerLink="/respuestas" class="submenu-item" (click)="closeMenu()">Listar</a>
-    <a mat-button routerLink="/respuestas/inserciones" class="submenu-item" (click)="closeMenu()">Registrar</a>
+    <a mat-button routerLink="/respuesta" class="submenu-item" (click)="closeMenu()">Listar</a>
+    <a mat-button routerLink="/respuesta/inserciones" class="submenu-item" (click)="closeMenu()">Registrar</a>
   </div>
 </div>
 
