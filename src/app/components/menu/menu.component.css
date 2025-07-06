@@ -1,6 +1,6 @@
 /* Toolbar principal */
 .custom-toolbar {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #263886 0%, #59377c 100%);
   color: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   position: sticky;
@@ -58,7 +58,7 @@
   left: -350px;
   width: 350px;
   height: 100vh;
-  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  background: linear-gradient(135deg, #263886 0%, #59377c 100%);
   z-index: 1100;
   transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 20px rgba(0,0,0,0.3);
@@ -107,6 +107,7 @@
   flex: 1;
   padding: 20px 0;
   overflow-y: auto;
+  overflow-x: hidden !important;
 }
 
 .menu-section {
@@ -123,6 +124,8 @@
   border-radius: 0 !important;
   position: relative;
   text-align: left;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .menu-item:hover {
@@ -145,6 +148,23 @@
 .menu-item.expandable {
   border-left: 4px solid transparent;
   transition: all 0.3s ease;
+  justify-content: space-between !important;
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.menu-item-content mat-icon {
+  margin-right: 16px;
+  color: #3498db;
+  transition: color 0.3s ease;
+}
+
+.menu-item:hover .menu-item-content mat-icon {
+  color: white;
 }
 
 .menu-item.expandable:hover {
@@ -180,12 +200,15 @@
 .submenu-item {
   width: 100%;
   justify-content: flex-start !important;
+  text-align: left !important;
   padding: 12px 24px !important;
-  color: #bdc3c7 !important;
+  color: #ffffff !important;
   font-size: 14px !important;
   transition: all 0.3s ease;
   border-radius: 0 !important;
   margin: 4px 0;
+  display: flex !important;
+  align-items: center !important;
 }
 
 .submenu-item:hover {
@@ -198,8 +221,9 @@
 /* Footer del menú */
 .menu-footer {
   padding: 20px;
-  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-top: 1px solid rgba(255,255,255,0.1);
+  font-weight: 600;
 }
 
 .user-info {
@@ -227,11 +251,29 @@
   visibility: hidden;
   transition: all 0.3s ease;
   backdrop-filter: blur(2px);
+  cursor: pointer;
 }
 
 .menu-overlay.open {
   opacity: 1;
   visibility: visible;
+}
+
+/* Prevenir propagación de eventos en el menú */
+.side-menu-content {
+  pointer-events: auto;
+}
+
+.side-menu {
+  pointer-events: none;
+}
+
+.side-menu.open {
+  pointer-events: auto;
+}
+
+.side-menu.open .side-menu-content {
+  pointer-events: auto;
 }
 
 /* Menú de usuario desplegable */
@@ -254,6 +296,92 @@
 .mat-mdc-menu-item mat-icon {
   color: #3498db !important;
   margin-right: 12px;
+}
+
+/* Estilos para el menú de usuario */
+::ng-deep .user-dropdown-menu {
+  border-radius: 12px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+  border: none !important;
+  overflow: hidden !important;
+  min-width: 280px !important;
+  margin-top: 8px !important;
+}
+
+::ng-deep .user-dropdown-menu .mat-mdc-menu-content {
+  padding: 0 !important;
+}
+
+.user-menu-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.user-avatar {
+  font-size: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  color: rgba(255,255,255,0.9) !important;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-role {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.user-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+}
+
+::ng-deep .user-dropdown-menu .mat-divider {
+  border-color: #e0e0e0 !important;
+  margin: 0 !important;
+}
+
+.logout-item {
+  padding: 16px 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  transition: all 0.3s ease !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.logout-item:hover {
+  background: linear-gradient(90deg, #f8f9fa, #e9ecef) !important;
+  color: #e74c3c !important;
+}
+
+.logout-icon {
+  color: #6c757d !important;
+  transition: color 0.3s ease !important;
+}
+
+.logout-item:hover .logout-icon {
+  color: #e74c3c !important;
+}
+
+::ng-deep .logout-item:hover {
+  background: linear-gradient(90deg, #fff5f5, #fed7d7) !important;
 }
 
 /* Animaciones adicionales */
@@ -295,7 +423,7 @@
   }
 }
 
-/* Efectos hover mejorados */
+/* Efectos hover */
 .menu-item::before {
   content: '';
   position: absolute;
@@ -326,4 +454,17 @@
 
 .submenu-item:hover::before {
   width: 100%;
+}
+
+.mat-icon.notranslate.expand-icon.material-icons.mat-ligature-font.mat-icon-no-color {
+	margin-left: 0 !important;
+  color: white !important;
+}
+
+.menu-item.expandable.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base {
+	justify-content: flex-start !important;
+}
+
+a.menu-item {
+  margin-bottom: 8px !important;
 }

@@ -3,7 +3,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink } from '@angular/router';
+import { MatDividerModule } from '@angular/material/divider';
+import { Router, RouterLink } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { CommonModule } from '@angular/common';
 
@@ -14,66 +15,69 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatDividerModule,
     CommonModule,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+  styleUrl: './menu.component.css',
 })
 export class MenuComponent implements OnInit {
-  
   rol: string = '';
-  
-  // Propiedades para el menú lateral
   isMenuOpen: boolean = false;
   openSubmenus: { [key: string]: boolean } = {};
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit() {
-    this.cargarRol();
-  }
-
-  cargarRol() {
-    const rolFromService = this.loginService.showRole();
-    console.log('Rol obtenido del servicio:', rolFromService);
-    this.rol = rolFromService || '';
-    console.log('Rol asignado al componente:', this.rol);
+    this.rol = this.loginService.showRole() || '';
   }
 
   cerrar() {
     this.loginService.logout();
-  }
-
-  verificar(): boolean {
-    const isAuthenticated = this.loginService.verificar();
-    if (isAuthenticated && !this.rol) {
-      // Si está autenticado pero no hay rol cargado, intentar cargarlo
-      this.cargarRol();
-    }
-    return isAuthenticated;
-  }
-
-  isDeveloper(): boolean {
-    return this.loginService.hasRole('DEVELOPER');
+    this.router.navigate(['/login']);
   }
 
   isTester(): boolean {
-    return this.loginService.hasRole('TESTER');
+    return this.loginService.hasRole('ROLE_TESTER');
   }
 
-  // Métodos para el menú lateral
+  isAdmin(): boolean {
+    return this.loginService.hasRole('ROLE_ADMIN');
+  }
+
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    if (!this.isMenuOpen) {
+      this.openSubmenus = {};
+    }
   }
 
   closeMenu(): void {
     this.isMenuOpen = false;
-    // También cerrar todos los submenús cuando se cierra el menú principal
     this.openSubmenus = {};
   }
 
-  toggleSubmenu(submenuKey: string): void {
+  toggleSubmenu(submenuKey: string, event?: Event): void {
+    if (event) {
+      event.stopPropagation();
+    }
     this.openSubmenus[submenuKey] = !this.openSubmenus[submenuKey];
   }
+
+  formatRol(rol: string) {
+    switch (rol) {
+      case 'ROLE_ADMIN':
+        return 'Administrador';
+      case 'ROLE_TESTER':
+        return 'Tester';
+      case 'ROLE_USER':
+        return 'Usuario';
+      default:
+        return 'No definido';
+    }
+  }
+isAdminOrTester(): boolean {
+  return this.loginService.hasRole('ROLE_ADMIN') || this.loginService.hasRole('ROLE_TESTER');
+}
 }
