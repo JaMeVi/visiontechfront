@@ -24,7 +24,7 @@ import { RespuestasComponent } from './components/respuestas/respuestas.componen
 import { InsertarEditarRespuestasComponent } from './components/respuestas/insertar-editar-respuestas/insertar-editar-respuestas.component';
 import { TemasforoComponent } from './components/temasforo/temasforo.component';
 import { InsertarEditarTemasforoComponent } from './components/temasforo/insertar-editar-temasforo/insertar-editar-temasforo.component';
-import { adminRoleGuard } from './guards/admin-role.guard';
+import { adminRoleGuard } from './guard/admin-role.guard';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
 
 export const routes: Routes = [
