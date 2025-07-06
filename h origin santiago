@@ -1,0 +1,421 @@
+[33mcommit a57a8f3fc13167888935ea9d46f273cdaa3c8d9f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32msantiago[m[33m)[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-07-04 10:00:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-07-04 10:00:00 -0500
+
+    agregando guards
+
+[33mcommit 5648113773c6f57b1d49c406029f874850ef6b3f[m[33m ([m[1;31morigin/santiago[m[33m)[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-07-06 08:55:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-07-06 08:55:00 -0500
+
+    [usuarios] Actualización final de la rama santiago
+
+[33mcommit 4cdf71705581a316e064c30a93baf0e7be88dae6[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-07-02 11:40:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-07-02 11:40:00 -0500
+
+    [usuarios] Prepara archivos para test unitarios
+
+[33mcommit 5b8ca9cbc2cb4f0343ef92d533307c1853630416[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-30 15:15:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-30 15:15:00 -0500
+
+    [usuarios] Agrega documentación interna
+
+[33mcommit 84541bcc24fba4e7bc90d91d3d939111f1dbe492[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-29 09:00:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-29 09:00:00 -0500
+
+    [usuarios] Optimiza el uso de servicios HTTP
+
+[33mcommit bf396f12aa1a3fdc5425fabbb05b5140c12aa49e[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-24 12:30:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-24 12:30:00 -0500
+
+    [usuarios] Mejora estilos y layout del HTML
+
+[33mcommit 58be4c666c1b96ac41b3abe66f1c8832cbd7334c[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-23 17:05:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-23 17:05:00 -0500
+
+    [usuarios] Reestructura modelo con nuevos campos
+
+[33mcommit ba3856093109e27bd2172cb53dc1bafcd46d7ed0[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-20 10:20:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-20 10:20:00 -0500
+
+    [usuarios] Agrega interceptor para errores
+
+[33mcommit 13e6827ac0a464e7f516fa8df39b94eba254a1e5[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-18 14:00:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-18 14:00:00 -0500
+
+    [usuarios] Mejora uso del observable
+
+[33mcommit abbbdfd13ef80ee439dea84e5115a8a1047b8de9[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-15 16:10:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-15 16:10:00 -0500
+
+    [usuarios] Refactoriza la lógica del componente
+
+[33mcommit 78e441527abfc39eaf55b24511cde7183b9b8f28[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-13 09:45:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-13 09:45:00 -0500
+
+    [usuarios] Agrega validaciones al formulario
+
+[33mcommit 31b22d33c4d91a64448c368225e1bd742ff6924b[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-11 13:00:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-11 13:00:00 -0500
+
+    [usuarios] Implementa servicio de usuarios
+
+[33mcommit f3e500e357e2702097d91ae61017fbd4c2b90ce0[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-09 11:30:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-09 11:30:00 -0500
+
+    [usuarios] Agrega propiedades al modelo
+
+[33mcommit 06e0d88e9bdf8b3b353969006b20f35531c33a23[m
+Author:     Santiago0403 <u20201b291@upc.edu.pe>
+AuthorDate: 2024-06-06 10:00:00 -0500
+Commit:     Santiago0403 <u20201b291@upc.edu.pe>
+CommitDate: 2024-06-06 10:00:00 -0500
+
+    [usuarios] Crea estructura inicial del componente
+
+[33mcommit ae6a199fa555d5c596d77b4c54398f27dfbeefd4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/jeremi[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 4585108 3ea21d3
+Author:     JaMeVi <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-17 19:17:44 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-17 19:17:44 -0500
+
+    Merge pull request #8 from JaMeVi/Jan-Mendoza
+    
+    Jan mendoza
+
+[33mcommit 3ea21d3da34cd53df2c8cf3613539e979303949c[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-17 19:16:43 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-17 19:16:43 -0500
+
+    Reestructuracion y ordenamiento
+
+[33mcommit 2facd971009ab744976903cdcf481b98cacd7313[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-17 16:27:26 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-17 16:27:26 -0500
+
+    funcional
+
+[33mcommit 4585108a8aaf8457d4a975f84e28a9c50d686583[m
+Merge: 1a3c06a 719f98c
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 21:50:27 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 21:50:27 -0500
+
+    Merge pull request #7 from JaMeVi/gabriel
+    
+    Gabriel
+
+[33mcommit 719f98c7ef83c01d9c31ed705769c15efa1c9e84[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 21:48:17 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 21:48:17 -0500
+
+    Add files via upload
+
+[33mcommit 7edb90fd4e6c4d74f72261a03c249eaae5ce1687[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 21:17:28 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 21:17:28 -0500
+
+    Add files via upload
+
+[33mcommit 26d49d5c8014ea9a910db473fb056bc6a5bb5a83[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 21:17:02 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 21:17:02 -0500
+
+    Add files via upload
+
+[33mcommit e868e042bfcf0ae30c6854fe4221f6fd069e5c25[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 21:15:38 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 21:15:38 -0500
+
+    Add files via upload
+
+[33mcommit 1a3c06a86d0ab0fe1b7e796fc48a5e1fb0a064a6[m
+Merge: 73b6f15 4d41bcd
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 18:13:42 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 18:13:42 -0500
+
+    Merge pull request #6 from JaMeVi/gabriel
+    
+    Gabriel
+
+[33mcommit 4d41bcd897c6235aa5d4306aeaa86b2038a23ce9[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 18:12:51 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 18:12:51 -0500
+
+    Add files via upload
+
+[33mcommit 160058e24727e3b57f76aa0fcddc216b473f9e35[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 18:11:15 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 18:11:15 -0500
+
+    Add files via upload
+
+[33mcommit 59b37d6cbc7649ee166d3efe36538ac558472934[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 18:10:15 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 18:10:15 -0500
+
+    Add files via upload
+
+[33mcommit 2d4526f86decd4a5d34192f983057be502dd0e6e[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 18:09:41 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 18:09:41 -0500
+
+    Add files via upload
+
+[33mcommit 73b6f1554dc68cc79016aba55686dbd3d3fe9feb[m
+Merge: 5208027 28bd695
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 16:43:40 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 16:43:40 -0500
+
+    Merge pull request #5 from JaMeVi/gabriel
+    
+    Gabriel
+
+[33mcommit 28bd695c6c2b70ad1e111c3efb2c45351fee3e40[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 16:42:55 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 16:42:55 -0500
+
+    Add files via upload
+
+[33mcommit 9d21f0e5e7468d99faf34323b1d29eb6d0f7c558[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-16 16:31:36 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-16 16:31:36 -0500
+
+    Add files via upload
+
+[33mcommit 8f43a860b21368e376bc4f74e23503a09c979c8e[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-15 22:11:50 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-15 22:11:50 -0500
+
+    Add files via upload
+
+[33mcommit 3d5b6a89aa1ebe0370eddc3c933deeb50fb79eed[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-14 21:32:21 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-14 21:32:21 -0500
+
+    Add files via upload
+
+[33mcommit 6f64d4ba0e8f62dc826ca877175f5f42d1952641[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-14 21:31:33 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-14 21:31:33 -0500
+
+    Add files via upload
+
+[33mcommit 4fe1be38e9fbed2929225256e7de7ee284a1bfaf[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-13 22:06:03 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-13 22:06:03 -0500
+
+    Add files via upload
+
+[33mcommit 5208027df476f5d3cd237c65b6537345bb35bba7[m
+Merge: 1ac4cdf 0dd5bb1
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-13 19:23:42 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-13 19:23:42 -0500
+
+    Merge pull request #4 from JaMeVi/gabriel
+    
+    Gabriel
+
+[33mcommit 0dd5bb1f092bba09d9a0388024587e34f973a850[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-13 19:22:27 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-13 19:22:27 -0500
+
+    Add files via upload
+
+[33mcommit 8d3915811a46a520581c0af4148af6eb355eca47[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-13 19:19:46 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-13 19:19:46 -0500
+
+    Add files via upload
+
+[33mcommit d570f94e58e7b6c488831bb2792d16cc16111bc7[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-13 19:03:17 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-13 19:03:17 -0500
+
+    Update app.routes.ts
+
+[33mcommit 1ac4cdfb2537b531110590776166a7c7ee3408b8[m
+Merge: 60b654e 1ab4b6b
+Author:     JaMeVi <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-12 14:40:51 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-12 14:40:51 -0500
+
+    Merge pull request #3 from JaMeVi/Jan-Mendoza
+    
+    Jan mendoza
+
+[33mcommit 1ab4b6b47a666aca6d61fa130dab9755ab34e8ed[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-11 21:23:40 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-11 21:23:40 -0500
+
+    Update agregar-actualizar-recomendaciones.component.html
+
+[33mcommit 12c2721e7a80c114e65f597d064c442f227e0e40[m
+Author:     gpc2602 <119427605+gpc2602@users.noreply.github.com>
+AuthorDate: 2025-06-11 21:18:51 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-11 21:18:51 -0500
+
+    Add files via upload
+
+[33mcommit 60b654e9bb5fa8b636977866e16c84fbf639a450[m
+Merge: f80f4bd c71a5aa
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-09 23:14:22 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-09 23:14:22 -0500
+
+    prueba Merge branch 'Jan-Mendoza'
+
+[33mcommit c71a5aa3ece6fc6e104abb4d0e494c3aacd0f6cf[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-09 22:58:13 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-09 22:58:13 -0500
+
+    service
+
+[33mcommit 37c5337a771324511c5fd416be18d14de452593d[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-09 22:53:38 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-09 22:53:38 -0500
+
+    sin service
+
+[33mcommit f80f4bda03245fae7d85229c63632ce2ec9e1934[m
+Merge: 98c4626 2cd2cf2
+Author:     JaMeVi <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-09 22:21:05 -0500
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2025-06-09 22:21:05 -0500
+
+    Merge pull request #1 from JaMeVi/Jan-Mendoza
+    
+    borrar carpeta
+
+[33mcommit 2cd2cf21c67296b0c317728dd6ceb48444512af5[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-09 22:06:53 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-09 22:06:53 -0500
+
+    borrar carpeta
+
+[33mcommit 98c4626c35f1e66ed9d5b04dd68cd662b8a289d8[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-09 20:14:58 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-09 20:14:58 -0500
+
+    prueba
+
+[33mcommit b87560795807c255e94c447df6c288801c00a922[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-06 22:37:56 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-06 22:37:56 -0500
+
+    components
+
+[33mcommit 0cdf9cbdba4b851fcd742ad0e19b30e8c3816e36[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-06 22:30:46 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-06 22:30:46 -0500
+
+    service
+
+[33mcommit 3717a174c936d18c2f9a1fab7edd1b551f3f4f16[m
+Author:     Jan Mendoza V <u201924912@upc.edu.pe>
+AuthorDate: 2025-06-06 22:14:14 -0500
+Commit:     Jan Mendoza V <u201924912@upc.edu.pe>
+CommitDate: 2025-06-06 22:14:14 -0500
+
+    initial commit
